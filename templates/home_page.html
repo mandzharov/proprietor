@@ -1,0 +1,65 @@
+{% include 'base.html' %}
+
+{% block content %}
+    {#    {% if user.is_authenticated %}#}
+    {#        <h1>Hello, {% if user.profile %}{{ user.profile.first_name }}{% else %}{{ user.email }}{% endif %}</h1>#}
+    {#    {% else %}#}
+    {#        <h1>This is the HOME page!</h1>#}
+    {#    {% endif %}#}
+
+{#    <div class="container-fluid">#}
+        <img src="https://www.wanderarti.com/wp-content/uploads/2014/05/Berlin_Tacheles_Oranienburger_Panorama.jpg"
+             class="img-fluid"
+             alt="pic">
+{#    </div>#}
+
+    <div class="container-fluid text-dark bg-secondary bg-gradient p-3">
+        <h5 class="text-center">Your digital building manager</h5>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias architecto
+            consectetur, dolore eaque illo laudantium necessitatibus nesciunt non, numquam odio perferendis quia
+            quisquam ratione reiciendis rem repellendus repudiandae. Distinctio, tempora.</p>
+    </div>
+
+    <div class="container">
+        <div class="row g-4 py-4">
+            {% for i in 'aaaa'|make_list %}
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="https://cdn.pixabay.com/photo/2015/04/19/08/33/flower-729512__340.jpg"
+                             class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of
+                                the
+                                card's
+                                content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="row g-4 py-4">
+            {% for i in 'aaaa'|make_list %}
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="https://cdn.pixabay.com/photo/2015/04/19/08/33/flower-729512__340.jpg"
+                             class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of
+                                the
+                                card's
+                                content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+
+{% endblock %}

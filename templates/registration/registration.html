@@ -1,0 +1,27 @@
+{% include 'base.html' %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col">Column</div>
+        </div>
+        <div class="row">
+            <div class="col">Column</div>
+            <div class="col-6">
+                <form method="post">
+                    {% csrf_token %}
+                    {% for field in form %}
+                        <div class="form-floating mb-3">
+                            {{ field }}
+                            {{ field.label_tag }}
+                        </div>
+                    {% endfor %}
+                    <div>
+                        <button type="submit" class="btn btn-dark">Sign up</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col">Column</div>
+        </div>
+    </div>
+{% endblock %}
