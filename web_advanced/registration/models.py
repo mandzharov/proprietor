@@ -1,3 +1,4 @@
+from datetime import date
 from django.contrib.auth.base_user import AbstractBaseUser, BaseUserManager
 from django.contrib.auth.models import PermissionsMixin
 from django.db import models
@@ -40,13 +41,16 @@ class AppUser(AbstractBaseUser, PermissionsMixin):
 
     object = AppManager()
 
+    def __str__(self) -> str:
+        return str(self.email)
+
 
 class CountryCodes(models.Model):
     name = models.CharField(max_length=30)
     code = models.CharField(max_length=6, blank=False, null=False, default='+359')
 
     def __str__(self):
-        return self.code
+        return str(self.code)
 
 
 class Profile(models.Model):
@@ -64,3 +68,11 @@ class Profile(models.Model):
     picture = models.ImageField(null=True, blank=True)
     phone_code = models.ForeignKey(CountryCodes, on_delete=models.PROTECT)
     user = models.OneToOneField(AppUser, primary_key=True, on_delete=models.CASCADE)
+
+    def __str__(self) -> str:
+        return f'{self.first_name} {self.last_name} {self.user}'
+
+    @property
+    def age(self):
+        today = date.today()
+        return today.year - self.birth_date.year - ((today.month, today.day) < (self.birth_date.month, self.birth_date.day))

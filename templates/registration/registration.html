@@ -1,27 +1,23 @@
-{% include 'base.html' %}
-
+{% extends 'base.html' %}
 {% block content %}
-    <div class="container">
-        <div class="row">
-            <div class="col">Column</div>
-        </div>
-        <div class="row">
-            <div class="col">Column</div>
-            <div class="col-6">
-                <form method="post">
-                    {% csrf_token %}
-                    {% for field in form %}
-                        <div class="form-floating mb-3">
-                            {{ field }}
-                            {{ field.label_tag }}
-                        </div>
-                    {% endfor %}
-                    <div>
-                        <button type="submit" class="btn btn-dark">Sign up</button>
+    <section class="p-5 text-center">
+        <div class="container">
+            <div class="row g-5 justify-content-center">
+                <div class="col-xl-6 col-sm-12 bg-light">
+                    <div class="container p-4">
+                        <form method="post" action="{% url 'sign-in' %}">
+                            {% csrf_token %}
+                            {% for field in form %}
+                                <div class="form-floating mb-3">
+                                    {{ field }}
+                                    {{ field.label_tag }}
+                                </div>
+                            {% endfor %}
+                            <button type="submit" class="btn btn-dark">Submit</button>
+                        </form>
                     </div>
-                </form>
+                </div>
             </div>
-            <div class="col">Column</div>
         </div>
-    </div>
+    </section>
 {% endblock %}

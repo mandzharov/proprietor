@@ -10,7 +10,7 @@ class LoginForm(auth_forms.AuthenticationForm):
     username = forms.EmailField(
         max_length=254,
         label='Email',
-        widget=forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Email'})
+        widget=forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Email', 'autofocus': True})
     )
     password = forms.CharField(
         label="Password",
@@ -68,9 +68,9 @@ class CreateProfileForm(forms.ModelForm):
             'last_name',
             'birth_date',
             'gender',
-            'phone',
             'picture',
             'phone_code',
+            'phone',
         ]
         widgets = {
             'birth_date': forms.DateInput(attrs={'type': 'date'}, )

@@ -1,7 +1,5 @@
+from datetime import date
 from django.contrib.auth import get_user_model, authenticate, login
-from django.db.models.signals import post_delete, pre_delete
-from django.dispatch import receiver
-from django.http import HttpResponseRedirect
 from django.shortcuts import redirect
 from django.urls import reverse_lazy
 from django.views import generic as gen_views
@@ -27,7 +25,7 @@ def login_success(request):
 
 
 class AppLogoutView(auth_views.LogoutView):
-    template_name = 'registration/logout.html'
+    next_page = reverse_lazy('home page')
 
 
 class AppRegisterView(gen_views.CreateView):
@@ -44,6 +42,10 @@ class AppRegisterView(gen_views.CreateView):
         return redirect(self.success_url)
 
 
+class ProfileDetailsView(gen_views.DetailView):
+    model = Profile
+    context_object_name = 'profile'
+
 class AddProfileView(auth_mixins.LoginRequiredMixin, gen_views.CreateView):
     form_class = CreateProfileForm
     template_name = 'registration/profile.html'
@@ -56,7 +58,7 @@ class AddProfileView(auth_mixins.LoginRequiredMixin, gen_views.CreateView):
 
 
 class EditProfileView(auth_mixins.LoginRequiredMixin, gen_views.UpdateView):
-    template_name = 'registration/edit_profile.html'
+    template_name = 'registration/profile.html'
     model = Profile
     fields = [
         'first_name',
@@ -64,9 +66,9 @@ class EditProfileView(auth_mixins.LoginRequiredMixin, gen_views.UpdateView):
         'last_name',
         'birth_date',
         'gender',
-        'phone',
         'picture',
         'phone_code',
+        'phone',
     ]
     success_url = reverse_lazy('home page')
 
@@ -75,10 +77,3 @@ class DeleteProfileView(auth_mixins.LoginRequiredMixin, gen_views.DeleteView):
     model = AppUserModel
     success_url = reverse_lazy('home page')
     template_name = 'registration/delete_profile.html'
-
-
-@receiver(pre_delete, sender=AppUserModel)
-def delete_profile_on_user_delete(sender, instance, *args, **kwargs):
-    if instance.profile:
-        print(f'The profile will be deleted')
-        print(f'{instance.profile.first_name} {instance.profile.last_name}')

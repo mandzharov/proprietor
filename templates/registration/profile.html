@@ -1,22 +1,80 @@
-{% include 'base.html' %}
-
+{% extends "base.html" %}
 {% block content %}
-
-    <form method="post">
-        {% csrf_token %}
-        {% for field in form %}
+    <section class="p-5">
+        <div class="row justify-content-center">
+            <div class="col-xxl-3 col-lg-6 col-sm-8 col-xs-12 bg-light">
+                <div class="container">
+                    {% if profile %}
+                    <div class="row justify-content-center my-3">
+                        <div class="col-6">
+                        <h6 class="text-center">{{ profile.first_name }} {{ profile.last_name }}, Age: {{ profile.age }}</h6>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center my-3">
+                        <div class="col-6">
+                            <img src="{{ profile.picture.url }}"
+                                 class="img-fluid rounded-circle"
+                                 alt="{{ profile }}"/>
+                        </div>
+                    </div>
+                    {% endif %}
+                    <div class="row justify-content-center my-3">
+                        <div class="col">
+                            <form method="post" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                {% for field in form %}
+                                    <h6>{{ field.label_tag }}</h6>
+                                    <p>
+                                        {{ field }}
+                                    </p>
+                                {% endfor %}
+                                <button type="submit" class="btn btn-dark">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="p-5">
+        <div class="container bg-light">
             <p>
-                {{ field.label_tag }}<br>
-                {{ field }}
-                {% if field.help_text %}
-                    <small style="color: grey">{{ field.help_text }}</small>
-                {% endif %}
-                {% for error in field.errors %}
-                    <p style="color: red">{{ error }}</p>
-                {% endfor %}
+                Level 0
             </p>
-        {% endfor %}
-        <button type="submit" class="btn btn-primary">Update</button>
-        <a href="{% url 'home page' %}" role="button" class="btn btn-primary">Later</a>
-    </form>
+            <div class="container bg-secondary">
+                <p>
+                    Level 1
+                </p>
+                <div class="container bg-light">
+                    <p>
+                        Level 3
+                    </p>
+                    <div class="row">
+                        <div class="col bg-info">
+                            <p>
+                                Row 1 Col 1
+                            </p>
+                        </div>
+                        <div class="col bg-info">
+                            <p>
+                                Row 1 Col 2
+                            </p>
+                        </div>
+                        <div class="col bg-info">
+                            <p>
+                                Row 1 Col 3
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-4 bg-warning">
+                            <p>
+                                Row 2 Col 1
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 {% endblock %}
