@@ -28,6 +28,9 @@ class Building(models.Model):
     description = models.TextField(null=True, blank=True)
     manager = models.ForeignKey(UserModel, on_delete=models.SET_NULL, null=True, blank=True)
 
+    def __str__(self) -> str:
+        return f'{self.street_address} {self.block_number}'
+
 
 class Apartment(models.Model):
     building = models.ForeignKey(Building, on_delete=models.CASCADE)

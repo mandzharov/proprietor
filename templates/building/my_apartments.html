@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+    <section class="p-5">
+        <div class="container">
+            {% if not object_list %}
+                <h1 class="text-center">There are no apartments yet!</h1>
+            {% else %}
+                <div class="row g-4 justify-content-center">
+                    {% for apartment in object_list %}
+                        <div class="col-lg-4">
+                            <div class="card">
+                                <img src="https://cdn.pixabay.com/photo/2015/04/19/08/33/flower-729512__340.jpg"
+                                     class="card-img-top"
+                                     alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Floor: {{ apartment.floor }}, Apartment: TODO</h5>
+                                    <h6 class="card-subtitle mb-2 text-muted">{{ apartment.building }}</h6>
+                                    <p class="card-text">
+                                        <b>Rooms count:</b> {{ apartment.rooms_count }}</br>
+                                        <b>Area:</b> {{ apartment.area }} sq.m.</br>
+                                        <b>Share:</b> {{ apartment.share }}%</br>
+                                        {% if apartment.description %}
+                                        {{ apartment.description }}
+                                        {% else %}
+                                        There is no description of this apartment.
+                                        {% endif %}
+                                    </p>
+                                    <a href="{% url 'edit apartment' apartment.building.pk apartment.pk %}"
+                                        class="btn btn-primary bg-warning m-1">Edit</a>
+                                    <a href="{% url 'delete apartment' apartment.building.pk apartment.pk %}"
+                                        class="btn btn-primary bg-danger m-1">Delete</a>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+    </section>
+{% endblock content %}

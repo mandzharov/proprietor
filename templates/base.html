@@ -33,9 +33,16 @@
                             <li class="nav-item">
                                 <a href="{% url 'home page' %}" class="nav-link">Home</a>
                             </li>
-                            <li class="nav-item">
-                                <a href="{% url 'logout view' %}" class="nav-link">Logout</a>
-                            </li>
+                            {% if perms.building.can_view_building %}
+                                <li>
+                                    <a href="{% url 'view buildings' %}" class="nav-link">Buildings</a>
+                                </li>
+                            {% endif %}
+                            {% if perms.building.can_view_apartment %}
+                                <li>
+                                    <a href="{% url 'view my apartments' %}" class="nav-link">Apartments</a>
+                                </li>
+                            {% endif %}
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle"
                                    href="#"
@@ -47,6 +54,9 @@
                                             <a href="{% url 'create profile' %}" class="dropdown-item">Create</a>
                                         </li>
                                     {% else %}
+                                        <li class="nav-item">
+                                            <a href="{% url 'logout view' %}" class="dropdown-item">Logout</a>
+                                        </li>
                                         <li>
                                             <a href="{% url 'view profile' user.pk %}" class="dropdown-item">View</a>
                                         </li>

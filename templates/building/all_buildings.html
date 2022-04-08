@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block content %}
+    <section class="p-5">
+        <div class="container">
+            {% if not object_list %}
+                <h1 class="text-center">There are no buildings yet!</h1>
+            {% else %}
+                <div class="row g-4 justify-content-center">
+                    {% for building in object_list %}
+                        <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                            <div class="card">
+                                <img src="https://cdn.pixabay.com/photo/2015/04/19/08/33/flower-729512__340.jpg"
+                                     class="card-img-top"
+                                     alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ building.street_address }}, {{ building.block_number }}</h5>
+                                    <h6 class="card-subtitle mb-2 text-muted">{{ building.city }}</h6>
+                                    <p class="card-text">
+                                        <b>Storeys count:</b> {{ building.floors_count }}</br>
+                                        <b>Apt. count:</b> {{ building.apartment_set.all | length }}</br>
+                                        {% if building.description %}
+                                        {{ building.description }}
+                                        {% else %}
+                                        There is no description of this building.
+                                        {% endif %}
+                                    </p>
+                                    <a href="{% url 'edit building' building.pk %}"
+                                        class="btn btn-primary bg-warning m-1">Edit</a>
+                                    <a href="{% url 'delete building' building.pk %}"
+                                        class="btn btn-primary bg-danger m-1">Delete</a>
+                                    <a href="{% url 'view apartments' building.pk %}"
+                                        class="btn btn-primary bg-dark m-1">Apartments</a>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+    </section>
+{% endblock content %}
