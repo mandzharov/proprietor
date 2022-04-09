@@ -1,4 +1,3 @@
-from datetime import date
 from django.contrib.auth import get_user_model, authenticate, login
 from django.shortcuts import redirect
 from django.urls import reverse_lazy
@@ -6,8 +5,8 @@ from django.views import generic as gen_views
 from django.contrib.auth import views as auth_views
 from django.contrib.auth import mixins as auth_mixins
 
-from web_advanced.registration.forms import RegistrationForm, CreateProfileForm, LoginForm
-from web_advanced.registration.models import Profile
+from proprietor.register.forms import RegistrationForm, CreateProfileForm, LoginForm
+from proprietor.register.models import Profile
 
 AppUserModel = get_user_model()
 
@@ -29,7 +28,7 @@ class AppLogoutView(auth_views.LogoutView):
 
 
 class AppRegisterView(gen_views.CreateView):
-    template_name = 'registration/registration.html'
+    template_name = 'register/registration.html'
     form_class = RegistrationForm
     success_url = reverse_lazy('login success')
 
@@ -46,9 +45,14 @@ class ProfileDetailsView(gen_views.DetailView):
     model = Profile
     context_object_name = 'profile'
 
+    def get_queryset(self):
+        queryset = super().get_queryset().filter(user=self.request.user)
+        return queryset
+
+
 class AddProfileView(auth_mixins.LoginRequiredMixin, gen_views.CreateView):
     form_class = CreateProfileForm
-    template_name = 'registration/profile.html'
+    template_name = 'register/profile.html'
     success_url = reverse_lazy('home page')
 
     def get_form_kwargs(self):
@@ -58,7 +62,7 @@ class AddProfileView(auth_mixins.LoginRequiredMixin, gen_views.CreateView):
 
 
 class EditProfileView(auth_mixins.LoginRequiredMixin, gen_views.UpdateView):
-    template_name = 'registration/profile.html'
+    template_name = 'register/profile.html'
     model = Profile
     fields = [
         'first_name',
@@ -72,8 +76,16 @@ class EditProfileView(auth_mixins.LoginRequiredMixin, gen_views.UpdateView):
     ]
     success_url = reverse_lazy('home page')
 
+    def get_queryset(self):
+        queryset = super().get_queryset().filter(user=self.request.user)
+        return queryset
+
 
 class DeleteProfileView(auth_mixins.LoginRequiredMixin, gen_views.DeleteView):
     model = AppUserModel
     success_url = reverse_lazy('home page')
-    template_name = 'registration/delete_profile.html'
+    template_name = 'register/delete_profile.html'
+
+    def get_queryset(self):
+        queryset = super().get_queryset().filter(pk=self.request.user.pk)
+        return queryset

@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block content %}
+    <section class="p-5">
+        <div class="row justify-content-center">
+            <div class="col-xxl-3 col-lg-6 col-sm-8 col-xs-12 bg-light">
+                <div class="container">
+                    {% if profile %}
+                        <div class="row justify-content-center my-3">
+                            <div class="col-6">
+                                <h6 class="text-center">{{ profile.first_name }} {{ profile.last_name }},
+                                    Age: {{ profile.age }}</h6>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center my-3">
+                            <div class="col-6">
+                                {% if profile.picture %}
+                                    <img src="{{ profile.picture.url }}"
+                                         class="img-fluid rounded-circle"
+                                         alt="{{ profile }}">
+                                {% else %}
+                                    {% if profile.gender == 'M' %}
+                                        <a href="https://www.freeiconspng.com/img/7907"
+                                           title="Image from freeiconspng.com"><img
+                                                src="https://www.freeiconspng.com/uploads/male-icon-4.jpg" width="350"
+                                                class="img-fluid rounded-circle"
+                                                alt="Png Male Icon"/></a>
+                                    {% else %}
+                                        <a href="https://www.freeiconspng.com/img/7882"
+                                           title="Image from freeiconspng.com"><img
+                                                src="https://www.freeiconspng.com/uploads/female-icon-11.jpg"
+                                                width="350"
+                                                class="img-fluid rounded-circle"
+                                                alt="Hd Icon Female"/></a>
+                                    {% endif %}
+                                {% endif %}
+                            </div>
+                        </div>
+                    {% endif %}
+                    <div class="row justify-content-center my-3">
+                        <div class="col">
+                            <form method="post" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                {% for field in form %}
+                                    <h6>{{ field.label_tag }}</h6>
+                                    <p>
+                                        {{ field }}
+                                    </p>
+                                {% endfor %}
+                                <button type="submit" class="btn btn-dark">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

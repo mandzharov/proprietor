@@ -1,7 +1,7 @@
 from django.contrib.auth import forms as auth_forms, get_user_model, password_validation
 from django import forms
 
-from web_advanced.registration.models import Profile
+from proprietor.register.models import Profile
 
 AppUserModel = get_user_model()
 

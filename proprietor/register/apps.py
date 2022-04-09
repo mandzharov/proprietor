@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class UsersConfig(AppConfig):
+class RegistrationConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'web_advanced.building'
+    name = 'proprietor.register'

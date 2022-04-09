@@ -16,8 +16,8 @@
                                     <h5 class="card-title">{{ building.street_address }}, {{ building.block_number }}</h5>
                                     <h6 class="card-subtitle mb-2 text-muted">{{ building.city }}</h6>
                                     <p class="card-text">
-                                        <b>Storeys count:</b> {{ building.floors_count }}</br>
-                                        <b>Apt. count:</b> {{ building.apartment_set.all | length }}</br>
+                                        <b>Storeys count:</b> {{ building.floors_count }}<br>
+                                        <b>Apt. count:</b> {{ building.apartment_set.all | length }}<br>
                                         {% if building.description %}
                                         {{ building.description }}
                                         {% else %}

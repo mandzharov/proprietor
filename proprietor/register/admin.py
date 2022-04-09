@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.contrib.auth import get_user_model
 
-from web_advanced.registration.models import CountryCodes, Profile
+from proprietor.register.models import CountryCodes, Profile
 
 AppUserModel = get_user_model()
 
@@ -14,6 +14,7 @@ class AppUserAdmin(admin.ModelAdmin):
 @admin.register(Profile)
 class ProfileAdmin(admin.ModelAdmin):
     pass
+
 
 @admin.register(CountryCodes)
 class CountryCodesAdmin(admin.ModelAdmin):

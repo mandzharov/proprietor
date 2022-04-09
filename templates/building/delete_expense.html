@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+    <section class="p-5">
+        <div class="row justify-content-center">
+            <div class="col-4 text-center bg-light p-3">
+                <form method="post">
+                    {% csrf_token %}
+                    <p>Are you sure you want to delete {{ object }}</p>
+                    <button type="submit" class="btn btn-dark">YES</button>
+                    <a href="{% url 'list expenses' object.apartment.building.pk object.apartment.pk %}"
+                       class="btn btn-dark"
+                       role="button">Go back</a>
+                </form>
+            </div>
+        </div>
+    </section>
+{% endblock %}

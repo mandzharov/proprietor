@@ -13,22 +13,22 @@
                                      class="card-img-top"
                                      alt="...">
                                 <div class="card-body">
-                                    <h5 class="card-title">Floor: {{ apartment.floor }}, Apartment: TODO</h5>
+                                    <h5 class="card-title">Floor: {{ apartment.floor }}, Apartment: {{ apartment.number }}</h5>
                                     <h6 class="card-subtitle mb-2 text-muted">{{ apartment.building }}</h6>
                                     <p class="card-text">
-                                        <b>Rooms count:</b> {{ apartment.rooms_count }}</br>
-                                        <b>Area:</b> {{ apartment.area }} sq.m.</br>
-                                        <b>Share:</b> {{ apartment.share }}%</br>
+                                        <b>Rooms count:</b> {{ apartment.rooms_count }}<br>
+                                        <b>Area:</b> {{ apartment.area }} sq.m.<br>
+                                        <b>Share:</b> {{ apartment.share }}%<br>
                                         {% if apartment.description %}
-                                        {{ apartment.description }}
+                                            {{ apartment.description }}
                                         {% else %}
-                                        There is no description of this apartment.
+                                            There is no description of this apartment.
                                         {% endif %}
                                     </p>
-                                    <a href="{% url 'edit apartment' apartment.building.pk apartment.pk %}"
-                                        class="btn btn-primary bg-warning m-1">Edit</a>
-                                    <a href="{% url 'delete apartment' apartment.building.pk apartment.pk %}"
-                                        class="btn btn-primary bg-danger m-1">Delete</a>
+                                    <a href="{% url 'list expenses' apartment.building.pk apartment.pk %}"
+                                       class="btn btn-dark m-1">Manage Expenses</a>
+                                    <a href="#"
+                                       class="btn btn-dark m-1">View report</a>
                                 </div>
                             </div>
                         </div>

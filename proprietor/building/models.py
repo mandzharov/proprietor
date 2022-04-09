@@ -1,9 +1,8 @@
 from django.contrib.auth import get_user_model
 from django.core.exceptions import ValidationError
 from django.db import models
-from django.core.validators import MinValueValidator, MaxValueValidator
+from django.core.validators import MinValueValidator
 from django.utils.deconstruct import deconstructible
-
 
 UserModel = get_user_model()
 
@@ -35,11 +34,15 @@ class Building(models.Model):
 class Apartment(models.Model):
     building = models.ForeignKey(Building, on_delete=models.CASCADE)
     floor = models.IntegerField(validators=[MinValueValidator(0)])
+    number = models.CharField(max_length=10)
     area = models.FloatField(validators=[MinValueValidator(0)])
     rooms_count = models.IntegerField(validators=[MinValueValidator(0)])
     share = models.FloatField()
     description = models.TextField(null=True, blank=True)
     owner = models.ManyToManyField(UserModel)
+
+    def __str__(self):
+        return f'{self.building}/{self.floor}/{self.number}'
 
 
 class UtilityType(models.Model):
@@ -58,6 +61,9 @@ class UtilityType(models.Model):
     name = models.CharField(max_length=30)
     description = models.TextField(null=True, blank=True)
 
+    def __str__(self):
+        return str(self.name)
+
 
 class UtilitiesExpenses(models.Model):
     MONTH_CHOICES = [
@@ -75,11 +81,17 @@ class UtilitiesExpenses(models.Model):
         ('DEC', 'December'),
     ]
 
-    name = models.ForeignKey(UtilityType, on_delete=models.PROTECT)
-    bill_year = models.IntegerField(validators=[MinValueValidator(1981), MaxValueValidator(2099)])
+    YEAR_CHOICES = [(i, i) for i in range(2000, 2099)]
+
+    utility_type = models.ForeignKey(UtilityType, on_delete=models.PROTECT)
+    amount = models.DecimalField(max_digits=6, decimal_places=2)
+    bill_year = models.IntegerField(choices=YEAR_CHOICES)
     bill_month = models.CharField(max_length=3, choices=MONTH_CHOICES, null=True, blank=True)
     entry_dt = models.DateTimeField(auto_now=True)
     apartment = models.ForeignKey(Apartment, on_delete=models.CASCADE)
+
+    class Meta:
+        unique_together = ['utility_type', 'bill_year', 'bill_month', 'apartment']
 
 
 class BuildingExpenses(models.Model):

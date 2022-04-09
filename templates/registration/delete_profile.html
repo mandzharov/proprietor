@@ -1,8 +1,0 @@
-{% extends 'base.html' %}
-{% block content %}
-    <form method="post" action="{% url 'delete profile' object.pk %}">{% csrf_token %}
-        <p>Are you sure you want to delete {{ object }}</p>
-        <button type="submit" class="btn btn-primary">YES</button>
-        <a href="{% url 'home page' %}" class="btn btn-primary" role="button">NO, I am an idiot!</a>
-    </form>
-{% endblock %}
