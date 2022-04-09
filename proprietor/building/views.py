@@ -95,6 +95,12 @@ class EditUtilityExpenseView(LoginRequiredMixin, PermissionRequiredMixin, gen_vi
         url = reverse_lazy('list expenses', kwargs={'pk': building, 'apt_pk': apartment})
         return url.format(**self.object.__dict__)
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data()
+        context['apt_pk'] = self.kwargs['apt_pk']
+        context['building_pk'] = self.kwargs['pk']
+        return context
+
 
 class DeleteUtilityExpenseView(LoginRequiredMixin, PermissionRequiredMixin, gen_views.DeleteView):
     model = UtilitiesExpenses
@@ -147,14 +153,16 @@ class ReportView(LoginRequiredMixin, PermissionRequiredMixin, gen_views.View):
             queryset = queryset.filter(utility_type__name=type_selected)
         year_choices = queryset.order_by('bill_year').values_list('bill_year').distinct()
         month_choices = queryset.order_by('bill_month').values_list('bill_month').distinct()
-        name_choices = queryset.order_by('utility_type__name').values_list('utility_type__name').distinct()
+        type_choices = queryset.order_by('utility_type__name').values_list('utility_type__name').distinct()
         result = queryset.aggregate(Avg('amount'))
         context = {'year_choices': [str(i[0]) for i in year_choices],
                    'month_choices': [i[0] for i in month_choices],
-                   'name_choices': [i[0] for i in name_choices],
+                   'type_choices': [i[0] for i in type_choices],
                    'year_selected': year_selected,
                    'month_selected': month_selected,
-                   'name_selected': type_selected,
-                   'result': result['amount__avg']
+                   'type_selected': type_selected,
+                   'result': result['amount__avg'],
+                   'building_pk': self.kwargs['pk'],
+                   'apt_pk': self.kwargs['apt_pk']
                    }
         return render(request, template_name='building/report.html', context=context)

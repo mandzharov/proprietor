@@ -27,7 +27,7 @@
                                     </p>
                                     <a href="{% url 'list expenses' apartment.building.pk apartment.pk %}"
                                        class="btn btn-dark m-1">Manage Expenses</a>
-                                    <a href="#"
+                                    <a href="{% url 'report' apartment.building.pk apartment.pk %}"
                                        class="btn btn-dark m-1">View report</a>
                                 </div>
                             </div>

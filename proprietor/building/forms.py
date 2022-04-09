@@ -18,5 +18,5 @@ class CreateExpenseForm(forms.ModelForm):
 
     class Meta:
         model = UtilitiesExpenses
-        fields = ['utility_type', 'amount', 'bill_year', 'bill_month']
+        fields = ['utility_type', 'bill_year', 'bill_month', 'amount']
 

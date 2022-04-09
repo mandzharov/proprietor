@@ -14,6 +14,7 @@ AppUserModel = get_user_model()
 class AppLoginView(auth_views.LoginView):
     next_page = reverse_lazy('login success')
     authentication_form = LoginForm
+    template_name = 'register/login.html'
 
 
 def login_success(request):
