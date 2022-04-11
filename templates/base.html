@@ -44,10 +44,17 @@
                         </li>
                     {% endif %}
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle"
-                           href="#"
-                           role="button"
-                           data-bs-toggle="dropdown">My profile</a>
+                        {% if user.profile %}
+                            <a class="nav-link dropdown-toggle"
+                               href="#"
+                               role="button"
+                               data-bs-toggle="dropdown">{{ user.profile.first_name }} {{ user.profile.last_name }}</a>
+                        {% else %}
+                            <a class="nav-link dropdown-toggle"
+                               href="#"
+                               role="button"
+                               data-bs-toggle="dropdown">{{ user.email }}</a>
+                        {% endif %}
                         <ul class="dropdown-menu dropdown-menu-end bg-light text-center">
                             <li class="nav-item">
                                 <a href="{% url 'logout' %}" class="dropdown-item">Logout</a>

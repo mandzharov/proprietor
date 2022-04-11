@@ -1,11 +1,12 @@
 from django.db.models import Avg
+from django.http import Http404
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views import generic as gen_views
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 
-from proprietor.building.forms import CreateExpenseForm
-from proprietor.building.models import Apartment, Building, UtilitiesExpenses
+from proprietor.building.forms import CreateExpenseForm, CreateUtilityForm, CreateApartmentForm
+from proprietor.building.models import Apartment, Building, UtilitiesExpenses, UtilityType
 
 
 class AllBuildingsView(LoginRequiredMixin, PermissionRequiredMixin, gen_views.ListView):
@@ -31,12 +32,12 @@ class ListUtilityExpensesView(LoginRequiredMixin, PermissionRequiredMixin, gen_v
 
     def get_queryset(self):
         apartment = Apartment.objects.get(pk=self.kwargs['apt_pk'])
-        queryset = super(ListUtilityExpensesView, self).get_queryset().filter(apartment=apartment).order_by(
+        queryset = super().get_queryset().filter(apartment=apartment).order_by(
             '-bill_year', '-entry_dt')
         return queryset
 
     def get_context_data(self, *, object_list=None, **kwargs):
-        context = super(ListUtilityExpensesView, self).get_context_data(object_list=None, **kwargs)
+        context = super().get_context_data(object_list=None, **kwargs)
         context['apt_pk'] = self.kwargs['apt_pk']
         context['building_pk'] = self.kwargs['pk']
         return context
@@ -51,7 +52,7 @@ class AddUtilityExpenseView(LoginRequiredMixin, PermissionRequiredMixin, gen_vie
     def get_form_kwargs(self):
         apt_pk = self.kwargs['apt_pk']
         apt = Apartment.objects.get(pk=apt_pk)
-        form_kwargs = super(AddUtilityExpenseView, self).get_form_kwargs()
+        form_kwargs = super().get_form_kwargs()
         form_kwargs['apartment'] = apt
         return form_kwargs
 
@@ -166,3 +167,102 @@ class ReportView(LoginRequiredMixin, PermissionRequiredMixin, gen_views.View):
                    'apt_pk': self.kwargs['apt_pk']
                    }
         return render(request, template_name='building/report.html', context=context)
+
+
+class CreateUtilityView(gen_views.CreateView):
+    model = UtilityType
+    template_name = 'building/add_utility_type.html'
+    form_class = CreateUtilityForm
+    success_url = reverse_lazy('manager admin')
+
+
+class EditUtilityView(gen_views.UpdateView):
+    model = UtilityType
+    template_name = 'building/add_utility_type.html'
+    form_class = CreateUtilityForm
+    success_url = reverse_lazy('manager admin')
+
+
+class DeleteUtilityView(gen_views.DeleteView):
+    model = UtilityType
+    template_name = 'building/delete_utility.html'
+    success_url = reverse_lazy('manager admin')
+
+
+class AddApartmentView(LoginRequiredMixin, PermissionRequiredMixin, gen_views.CreateView):
+    model = Apartment
+    permission_required = 'building.add_apartment'
+    template_name = 'building/add_apartment.html'
+    form_class = CreateApartmentForm
+    success_url = reverse_lazy('manager admin')
+
+    def dispatch(self, request, *args, **kwargs):
+        building = Building.objects.get(pk=self.kwargs['pk'])
+        if not building.manager == self.request.user:
+            raise Http404("You don't have permissions to do that")
+        return super().dispatch(request, *args, **kwargs)
+
+    def get_form_kwargs(self):
+        building_pk = self.kwargs['pk']
+        building = Building.objects.get(pk=building_pk)
+        form_kwargs = super().get_form_kwargs()
+        form_kwargs['building'] = building
+        return form_kwargs
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data()
+        context['building_pk'] = self.kwargs['pk']
+        return context
+
+
+class EditApartmentView(LoginRequiredMixin, PermissionRequiredMixin, gen_views.UpdateView):
+    model = Apartment
+    permission_required = 'building.change_apartment'
+    template_name = 'building/add_apartment.html'
+    success_url = reverse_lazy('manager admin')
+    fields = ['floor', 'number', 'area', 'rooms_count', 'share', 'description', 'owner']
+
+    def dispatch(self, request, *args, **kwargs):
+        building = Building.objects.get(pk=self.kwargs['pk'])
+        if not building.manager == self.request.user:
+            raise Http404("You don't have permissions to do that")
+        return super().dispatch(request, *args, **kwargs)
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        building = Building.objects.get(pk=self.kwargs['pk'])
+        queryset = queryset.filter(building=building)
+        return queryset
+
+    def get_object(self, queryset=None):
+        queryset = self.get_queryset()
+        apt_pk = self.kwargs['apt_pk']
+        queryset = queryset.filter(pk=apt_pk)
+        apartment_object = queryset.get()
+        return apartment_object
+
+
+class DeleteApartmentView(LoginRequiredMixin, PermissionRequiredMixin, gen_views.DeleteView):
+    model = Apartment
+    permission_required = 'building.delete_apartment'
+    template_name = 'building/delete_apartment.html'
+    success_url = reverse_lazy('manager admin')
+
+    def dispatch(self, request, *args, **kwargs):
+        building = Building.objects.get(pk=self.kwargs['pk'])
+        if not building.manager == self.request.user:
+            raise Http404("You don't have permissions to do that")
+        return super().dispatch(request, *args, **kwargs)
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        building = Building.objects.get(pk=self.kwargs['pk'])
+        queryset = queryset.filter(building=building)
+        return queryset
+
+    def get_object(self, queryset=None):
+        queryset = self.get_queryset()
+        apt_pk = self.kwargs['apt_pk']
+        queryset = queryset.filter(pk=apt_pk)
+        apartment_object = queryset.get()
+        return apartment_object

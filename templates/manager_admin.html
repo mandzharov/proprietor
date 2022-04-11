@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
+    {% if pending_users_list %}
     <section class="p-5">
         <div class="row justify-content-center">
             <div class="col-md-6 m-2">
@@ -7,9 +8,9 @@
             </div>
         </div>
         <div class="row justify-content-center">
-            <div class="col-md-6 bg-light p-2">
-                {% for user in pending_users %}
-                    <div class="container bg-light my-2">
+            <div class="col-md-6 p-2 bg-warning ">
+                {% for user in pending_users_list %}
+                    <div class="container my-2">
                         {% if user.profile %}
                             <h5>{{ user.profile }}</h5>
                         {% else %}
@@ -20,17 +21,39 @@
             </div>
         </div>
     </section>
+    {% endif %}
     <section class="p-5">
         <div class="row justify-content-center">
             <div class="col-md-6 m-2">
-                <h2 class="text-center">Utility Expense Types</h2>
+                <h2 class="text-center">Utility Types</h2>
             </div>
         </div>
         <div class="row justify-content-center">
-            <div class="col-md-6 bg-light p-2 text-center">
-                <a href="#" class="btn btn-dark">Add</a>
-                <a href="#" class="btn btn-dark">Edit</a>
-                <a href="#" class="btn btn-dark">Delete</a>
+            <div class="col-md-6 bg-light m-3 p-3">
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th class="text-end">Controls</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for utility in utility_types %}
+                        <tr>
+                            <td>{{ utility.name }}</td>
+                            <td>{{ utility.description|truncatechars:50 }}</td>
+                            <td class="text-end">
+                                <a href="{% url 'edit utility type' utility.pk %}" class="btn btn-dark">Edit</a>
+                                <a href="{% url 'delete utility type' utility.pk %}" class="btn btn-dark">Delete</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+                <div class="container py-2">
+                    <a href="{% url 'create utility type' %}" class="btn btn-dark">Add Utility</a>
+                </div>
             </div>
         </div>
     </section>
@@ -40,7 +63,7 @@
                 <h2 class="text-center">My buildings</h2>
             </div>
         </div>
-        {% for building in buildings_list %}
+        {% for building in object_list %}
             <div class="row justify-content-center">
                 <div class="col-md-6 bg-light m-3 p-3">
                     <h4 class="text-center">{{ building }}</h4>
@@ -49,7 +72,7 @@
                         <tr>
                             <th>Floor</th>
                             <th>Apartment</th>
-                            <th>Controls</th>
+                            <th class="text-end">Controls</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -57,17 +80,40 @@
                             <tr>
                                 <td>{{ apartment.floor }}</td>
                                 <td>{{ apartment.number }}</td>
-                                <td>
-                                    <a href="#" class="btn btn-dark">Edit</a>
-                                    <a href="#" class="btn btn-dark">Delete</a>
+                                <td class="text-end">
+                                    <a href="{% url 'edit apartment' building.pk apartment.pk %}" class="btn btn-dark">Edit</a>
+                                    <a href="{% url 'delete apartment' building.pk apartment.pk %}" class="btn btn-dark">Delete</a>
                                 </td>
                             </tr>
                         {% endfor %}
                         </tbody>
                     </table>
-                    <a href="#" class="btn btn-dark">Add Apartment</a>
+                    <div class="container py-2">
+                        <a href="{% url 'create apartment' building.pk %}" class="btn btn-dark">Add Apartment</a>
+                    </div>
                 </div>
             </div>
         {% endfor %}
+        <div class="row justify-content-center">
+            <div class="col-md-6 m-2">
+                <div class="container">
+                    <div class="pagination">
+                <span class="step-links">
+                    {% if page_obj.has_previous %}
+                        <a href="?page=1">&laquo; first</a>
+                        <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+                    {% endif %}
+                    <span class="current">
+                            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                        </span>
+                    {% if page_obj.has_next %}
+                        <a href="?page={{ page_obj.next_page_number }}">next</a>
+                        <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+                    {% endif %}
+                </span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 {% endblock %}

@@ -44,6 +44,9 @@ class Apartment(models.Model):
     def __str__(self):
         return f'{self.building} fl.{self.floor} ap.{self.number}'
 
+    class Meta:
+        ordering = ('floor', 'number')
+
 
 class UtilityType(models.Model):
     # UTILITIES = (

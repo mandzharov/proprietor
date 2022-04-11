@@ -1,15 +1,18 @@
 from django.urls import path
 
 from proprietor.building import views
+from proprietor.building.views import CreateUtilityView, EditUtilityView, DeleteUtilityView
 from proprietor.views import ManagerAdminView
 
 urlpatterns = [
     path("", views.AllBuildingsView.as_view(), name="view buildings"),
     path("admin/", ManagerAdminView.as_view(), name="manager admin"),
-    path("<int:pk>/apartment/", views.AllBuildingsView.as_view(), name="view apartments"),
-    path("<int:pk>/apartment/<int:apt_pk>/create/", views.AllBuildingsView.as_view(), name="create apartment"),
-    path("<int:pk>/apartment/<int:apt_pk>/edit/", views.AllBuildingsView.as_view(), name="edit apartment"),
-    path("<int:pk>/apartment/<int:apt_pk>/delete/", views.AllBuildingsView.as_view(), name="delete apartment"),
+    path("utility/create/", CreateUtilityView.as_view(), name="create utility type"),
+    path("utility/<int:pk>/edit/", EditUtilityView.as_view(), name="edit utility type"),
+    path("utility/<int:pk>/delete/", DeleteUtilityView.as_view(), name="delete utility type"),
+    path("<int:pk>/apartment/create/", views.AddApartmentView.as_view(), name="create apartment"),
+    path("<int:pk>/apartment/<int:apt_pk>/edit/", views.EditApartmentView.as_view(), name="edit apartment"),
+    path("<int:pk>/apartment/<int:apt_pk>/delete/", views.DeleteApartmentView.as_view(), name="delete apartment"),
     path("<int:pk>/apartment/<int:apt_pk>/expense/report/", views.ReportView.as_view(),
          name="report"),
     path("<int:pk>/apartment/<int:apt_pk>/expense/list/", views.ListUtilityExpensesView.as_view(),
