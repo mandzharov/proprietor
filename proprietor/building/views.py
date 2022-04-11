@@ -75,7 +75,7 @@ class EditUtilityExpenseView(LoginRequiredMixin, PermissionRequiredMixin, gen_vi
     fields = ['utility_type', 'amount', 'bill_year', 'bill_month']
 
     def get_queryset(self):
-        queryset = super(EditUtilityExpenseView, self).get_queryset()
+        queryset = super().get_queryset()
         building = Building.objects.get(pk=self.kwargs['pk'])
         apartment = Apartment.objects.get(pk=self.kwargs['apt_pk'])
         queryset = queryset.filter(apartment__owner=self.request.user).filter(apartment__building=building).filter(

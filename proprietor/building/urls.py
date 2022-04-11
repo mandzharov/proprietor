@@ -1,12 +1,11 @@
 from django.urls import path
 
 from proprietor.building import views
+from proprietor.views import ManagerAdminView
 
 urlpatterns = [
     path("", views.AllBuildingsView.as_view(), name="view buildings"),
-    path("<int:pk>/create/", views.AllBuildingsView.as_view(), name="create building"),
-    path("<int:pk>/edit/", views.AllBuildingsView.as_view(), name="edit building"),
-    path("<int:pk>/delete/", views.AllBuildingsView.as_view(), name="delete building"),
+    path("admin/", ManagerAdminView.as_view(), name="manager admin"),
     path("<int:pk>/apartment/", views.AllBuildingsView.as_view(), name="view apartments"),
     path("<int:pk>/apartment/<int:apt_pk>/create/", views.AllBuildingsView.as_view(), name="create apartment"),
     path("<int:pk>/apartment/<int:apt_pk>/edit/", views.AllBuildingsView.as_view(), name="edit apartment"),

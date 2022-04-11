@@ -38,6 +38,11 @@
                             <a href="{% url 'my apartments' %}" class="nav-link">My Apartments</a>
                         </li>
                     {% endif %}
+                    {% if user.is_staff %}
+                        <li class="nav-item">
+                            <a href="{% url 'manager admin' %}" class="nav-link">Admin</a>
+                        </li>
+                    {% endif %}
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle"
                            href="#"
@@ -64,26 +69,6 @@
                             </li>
                         </ul>
                     </li>
-                    {% if user.is_staff %}
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle"
-                               href="#"
-                               role="button"
-                               data-bs-toggle="dropdown">Admin</a>
-                            <ul class="dropdown-menu dropdown-menu-end bg-light text-center">
-                                {% if perms.building.add_apartment %}
-                                    <li>
-                                        <a href="#" class="dropdown-item">Apartments</a>
-                                    </li>
-                                {% endif %}
-                                {% if perms.building.add_building %}
-                                    <li>
-                                        <a href="#" class="dropdown-item">Buildings</a>
-                                    </li>
-                                {% endif %}
-                            </ul>
-                        </li>
-                    {% endif %}
                 {% endif %}
             </ul>
         </div>

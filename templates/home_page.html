@@ -20,25 +20,82 @@
     </section>
     <section class="p-5">
         <div class="container">
-            <div class="row g-4 justify-content-start">
-                {% for i in 'aaaaaaa'|make_list %}
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="card">
-                            <img src="https://cdn.pixabay.com/photo/2015/04/19/08/33/flower-729512__340.jpg"
-                                 class="card-img-top"
-                                 alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">
-                                    Some quick example text to build on the card title and make up the bulk
-                                    of the card's content.
-                                </p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
+            {% if not object_list %}
+                <h1 class="text-center">There are no buildings yet!</h1>
+            {% else %}
+                <div class="row g-4 justify-content-center">
+                    {% for building in object_list %}
+                        <div class="col-sm-6 col-md-3">
+                            <div class="card">
+                                <img src="https://cdn.pixabay.com/photo/2015/04/19/08/33/flower-729512__340.jpg"
+                                     class="card-img-top"
+                                     alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ building.street_address }}, {{ building.block_number }}</h5>
+                                    <h6 class="card-subtitle mb-2 text-muted">{{ building.city }}</h6>
+                                    <p class="card-text">
+                                        <b>Storeys count:</b> {{ building.floors_count }}<br>
+                                        <b>Apt. count:</b> {{ building.apartment_set.all | length }}<br>
+                                        {% if building.description %}
+                                            {{ building.description }}
+                                        {% else %}
+                                            There is no description of this building.
+                                        {% endif %}
+                                    </p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                {% endfor %}
-            </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+    </section>
+    <section class="mt-5">
+        <h2 class="text-center">Our managers</h2>
+    </section>
+    <section class="p-5">
+        <div class="container">
+            {% if not managers_list %}
+                <h1 class="text-center">There are no managers yet!</h1>
+            {% else %}
+                <div class="row g-4 justify-content-center">
+                    {% for manager in managers_list %}
+                        <div class="col-sm-6 col-md-3">
+                            <div class="card">
+                                {% if manager.picture %}
+                                    <img src="{{ manager.picture.url }}"
+                                         class="card-img-top"
+                                         alt="{{ manager }}">
+                                {% else %}
+                                    {% if manager.gender == 'M' %}
+                                        <a href="https://www.freeiconspng.com/img/7907"
+                                           title="Image from freeiconspng.com"><img
+                                                src="https://www.freeiconspng.com/uploads/male-icon-4.jpg" width="350"
+                                                class="card-img-top"
+                                                alt="Png Male Icon"/></a>
+                                    {% else %}
+                                        <a href="https://www.freeiconspng.com/img/7882"
+                                           title="Image from freeiconspng.com"><img
+                                                src="https://www.freeiconspng.com/uploads/female-icon-11.jpg"
+                                                width="350"
+                                                class="card-img-top"
+                                                alt="Hd Icon Female"/></a>
+                                    {% endif %}
+                                {% endif %}
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ manager.first_name }}, {{ manager.last_name }}</h5>
+                                    <h6 class="card-subtitle mb-2 text-muted">{{ building.city }}</h6>
+                                    <p class="card-text">
+                                        <b>Age:</b> {{ manager.age }}<br>
+                                        <b>Phone:</b> {{ manager.phone_code }} / {{ manager.phone }}<br>
+                                        <b>Email:</b> {{ manager.user.email }}<br>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
         </div>
     </section>
 {% endblock %}
