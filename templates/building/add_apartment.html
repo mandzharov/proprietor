@@ -12,7 +12,7 @@
                                 <p>
                                     {{ field }}
                                 </p>
-                                <p class="text-danger">{{ field.errors }}</p>
+                                <div class="text-danger">{{ field.errors }}</div>
                             {% endfor %}
                             <button type="submit" class="btn btn-dark">Submit</button>
                             <a href="{% url 'manager admin' %}"

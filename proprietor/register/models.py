@@ -1,8 +1,22 @@
+import re
 from datetime import date
 from django.contrib.auth.base_user import AbstractBaseUser, BaseUserManager
 from django.contrib.auth.models import PermissionsMixin
+from django.core.exceptions import ValidationError
 from django.db import models
 from django.contrib.auth.hashers import make_password
+
+
+def phone_validator(value):
+    pattern = r'^[1-9]\d{6,8}$'
+    if not re.findall(pattern, value):
+        raise ValidationError('Please, enter a valid phone number. Only numbers allowed.')
+
+
+def country_code_validator(value):
+    pattern = r'^(?:\+|00)[1-9]\d{1,2}$'
+    if not re.findall(pattern, value):
+        raise ValidationError('Please, enter a valid country code. Should start with + or 00.')
 
 
 class AppManager(BaseUserManager):
@@ -47,7 +61,7 @@ class AppUser(AbstractBaseUser, PermissionsMixin):
 
 class CountryCodes(models.Model):
     name = models.CharField(max_length=30)
-    code = models.CharField(max_length=6, blank=False, null=False, default='+359')
+    code = models.CharField(max_length=6, blank=False, null=False, validators=[country_code_validator])
 
     def __str__(self):
         return str(self.code)
@@ -64,7 +78,7 @@ class Profile(models.Model):
     last_name = models.CharField(max_length=30)
     birth_date = models.DateField()
     gender = models.CharField(max_length=30, choices=GENDERS, default=GENDERS[0][0])
-    phone = models.CharField(max_length=30)
+    phone = models.CharField(max_length=9, validators=[phone_validator])
     picture = models.ImageField(null=True, blank=True)
     phone_code = models.ForeignKey(CountryCodes, on_delete=models.PROTECT)
     user = models.OneToOneField(AppUser, primary_key=True, on_delete=models.CASCADE)
