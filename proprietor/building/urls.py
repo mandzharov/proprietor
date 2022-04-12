@@ -15,6 +15,7 @@ urlpatterns = [
     path("<int:pk>/apartment/<int:apt_pk>/delete/", views.DeleteApartmentView.as_view(), name="delete apartment"),
     path("<int:pk>/apartment/<int:apt_pk>/expense/report/", views.ReportView.as_view(),
          name="report"),
+
     path("<int:pk>/apartment/<int:apt_pk>/expense/list/", views.ListUtilityExpensesView.as_view(),
          name="list expenses"),
     path("<int:pk>/apartment/<int:apt_pk>/expense/create/", views.AddUtilityExpenseView.as_view(), name="create expense"),
