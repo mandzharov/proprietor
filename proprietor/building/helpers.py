@@ -1,7 +1,7 @@
 from django.http import Http404
 from django.urls import reverse_lazy
 
-from proprietor.building.models import Apartment
+from proprietor.building.models import Apartment, Building
 
 
 class UtilityExpenseDispatchMixin:
@@ -88,3 +88,24 @@ class UtilityExpenseDeleteViewMixin(UtilityExpenseDispatchMixin,
     """
     A combination class
     """
+
+
+class ApartmentEditDeleteViewMixin:
+    def dispatch(self, request, *args, **kwargs):
+        building = Building.objects.get(pk=self.kwargs['pk'])
+        if not building.manager == self.request.user:
+            raise Http404("You don't have permissions to do that")
+        return super().dispatch(request, *args, **kwargs)
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        building = Building.objects.get(pk=self.kwargs['pk'])
+        queryset = queryset.filter(building=building)
+        return queryset
+
+    def get_object(self):
+        queryset = self.get_queryset()
+        apt_pk = self.kwargs['apt_pk']
+        queryset = queryset.filter(pk=apt_pk)
+        apartment_object = queryset.get()
+        return apartment_object
