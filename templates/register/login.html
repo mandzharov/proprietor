@@ -7,6 +7,7 @@
                     <div class="container p-4">
                         <form method="post" action="{% url 'login' %}">
                             {% csrf_token %}
+                            <div class="text-danger">{{ form.non_field_errors }}</div>
                             {% for field in form %}
                                 <div class="form-floating mb-3">
                                     {{ field }}

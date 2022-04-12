@@ -1,3 +1,5 @@
+from django.core.exceptions import ValidationError
+from django.db import IntegrityError
 from django.http import Http404
 from django.urls import reverse_lazy
 
@@ -14,7 +16,7 @@ class UtilityExpenseDispatchMixin:
 
 class UtilityExpenseGetContextMixin:
     def get_context_data(self, **kwargs):
-        context = super().get_context_data()
+        context = super().get_context_data(**kwargs)
         context['apt_pk'] = self.kwargs['apt_pk']
         context['building_pk'] = self.kwargs['pk']
         return context
@@ -54,6 +56,16 @@ class UtilityExpenseGetObjectMixin:
         return expense_object
 
 
+class UtilityExpenseFormValidMixin:
+    def form_valid(self, form):
+        try:
+            self.object = form.save()
+        except IntegrityError:
+            form.add_error(None, 'There is already an Expense with the selected parameters.')
+            return self.render_to_response(self.get_context_data(form=form))
+        return super().form_valid(form)
+
+
 class UtilityExpenseListViewMixin(UtilityExpenseDispatchMixin,
                                   UtilityExpenseGetQuerysetMixin,
                                   UtilityExpenseGetContextMixin):
@@ -65,7 +77,8 @@ class UtilityExpenseListViewMixin(UtilityExpenseDispatchMixin,
 class UtilityExpenseCreateViewMixin(UtilityExpenseDispatchMixin,
                                     UtilityExpenseGetKwargsFormMixin,
                                     UtilityExpenseGetSuccessUrlMixin,
-                                    UtilityExpenseGetContextMixin):
+                                    UtilityExpenseGetContextMixin,
+                                    UtilityExpenseFormValidMixin):
     """
     A combination class
     """
@@ -75,7 +88,8 @@ class UtilityExpenseEditViewMixin(UtilityExpenseDispatchMixin,
                                   UtilityExpenseGetQuerysetMixin,
                                   UtilityExpenseGetObjectMixin,
                                   UtilityExpenseGetSuccessUrlMixin,
-                                  UtilityExpenseGetContextMixin):
+                                  UtilityExpenseGetContextMixin,
+                                  UtilityExpenseFormValidMixin):
     """
     A combination class
     """

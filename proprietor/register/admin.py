@@ -13,7 +13,7 @@ class AppUserAdmin(admin.ModelAdmin):
 
 @admin.register(Profile)
 class ProfileAdmin(admin.ModelAdmin):
-    pass
+    list_display = ('first_name', 'last_name', 'user')
 
 
 @admin.register(CountryCodes)

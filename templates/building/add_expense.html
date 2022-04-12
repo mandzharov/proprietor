@@ -7,11 +7,13 @@
                     <div class="container p-4">
                         <form method="post">
                             {% csrf_token %}
+                            <div class="text-danger">{{ form.non_field_errors }}</div>
                             {% for field in form %}
                                 <h6>{{ field.label_tag }}</h6>
                                 <p>
                                     {{ field }}
                                 </p>
+                                <p class="text-danger">{{ field.errors }}</p>
                             {% endfor %}
                             <button type="submit" class="btn btn-dark">Submit</button>
                             <a href="{% url 'list expenses' building_pk apt_pk %}"

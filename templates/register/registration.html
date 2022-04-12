@@ -12,6 +12,7 @@
                                     {{ field }}
                                     {{ field.label_tag }}
                                 </div>
+                                <p class="text-danger">{{ field.errors }}</p>
                             {% endfor %}
                             <button type="submit" class="btn btn-dark">Submit</button>
                         </form>

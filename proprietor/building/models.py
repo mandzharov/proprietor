@@ -2,6 +2,7 @@ from django.contrib.auth import get_user_model
 from django.core.exceptions import ValidationError
 from django.db import models
 from django.core.validators import MinValueValidator
+from django.db.models import UniqueConstraint
 from django.utils.deconstruct import deconstructible
 
 UserModel = get_user_model()
@@ -35,8 +36,8 @@ class Apartment(models.Model):
     building = models.ForeignKey(Building, on_delete=models.CASCADE)
     floor = models.IntegerField(validators=[MinValueValidator(0)])
     number = models.CharField(max_length=10)
-    area = models.FloatField(validators=[MinValueValidator(0)])
-    rooms_count = models.IntegerField(validators=[MinValueValidator(0)])
+    area = models.FloatField(validators=[MinValueValidator(10)])
+    rooms_count = models.IntegerField(validators=[MinValueValidator(1)])
     share = models.FloatField()
     description = models.TextField(null=True, blank=True)
     owner = models.ManyToManyField(UserModel)
@@ -93,8 +94,12 @@ class UtilitiesExpenses(models.Model):
     entry_dt = models.DateTimeField(auto_now=True)
     apartment = models.ForeignKey(Apartment, on_delete=models.CASCADE)
 
+    def __str__(self):
+        return f'{self.bill_year} {self.bill_month} {self.utility_type}'
+
     class Meta:
-        unique_together = ['utility_type', 'bill_year', 'bill_month', 'apartment']
+        constraints = [
+            UniqueConstraint(fields=('utility_type', 'bill_year', 'bill_month', 'apartment'), name='unique_type')]
 
 
 class BuildingExpenses(models.Model):

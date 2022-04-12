@@ -6,11 +6,12 @@ from proprietor.building.models import Apartment, Building, UtilitiesExpenses, B
 
 class ApartmentInline(admin.StackedInline):
     model = Apartment
+    max_num = 2
 
 
 @admin.register(Apartment)
 class ApartmentAdmin(admin.ModelAdmin):
-    pass
+    list_display = ('building', 'floor', 'number')
 
 
 @admin.register(Building)
@@ -22,7 +23,7 @@ class BuildingAdmin(admin.ModelAdmin):
 
 @admin.register(UtilitiesExpenses)
 class UtilitiesExpensesAdmin(admin.ModelAdmin):
-    pass
+    list_display = ('apartment', 'utility_type', 'bill_year', 'bill_month')
 
 
 @admin.register(BuildingExpenses)
@@ -37,4 +38,4 @@ class BuildingIncomeAdmin(admin.ModelAdmin):
 
 @admin.register(UtilityType)
 class UtilityTypeAdmin(admin.ModelAdmin):
-    pass
+    list_display = ('name', 'description')

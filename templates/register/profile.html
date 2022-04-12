@@ -45,6 +45,9 @@
                                     <p>
                                         {{ field }}
                                     </p>
+                                    <p class="text-danger">
+                                        {{ field.errors }}
+                                    </p>
                                 {% endfor %}
                                 <button type="submit" class="btn btn-dark">Submit</button>
                             </form>
