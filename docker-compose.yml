@@ -9,6 +9,8 @@ services:
       - POSTGRES_DB=${DB_NAME}
       - POSTGRES_USER=${DB_USER}
       - POSTGRES_PASSWORD=${DB_PASSWORD}
+    networks:
+      - proprietor
   app:
     build: .
     ports:
@@ -16,8 +18,14 @@ services:
     environment:
       - DEBUG=${DEBUG}
       - APP_ENVIRONMENT=${APP_ENVIRONMENT}
+      - DB_HOST=${DB_HOST}
       - DB_NAME=${DB_NAME}
       - DB_USER=${DB_USER}
       - DB_PASSWORD=${DB_PASSWORD}
+    networks:
+      - proprietor
     depends_on:
       - db
+networks:
+  proprietor:
+    driver: bridge
