@@ -1,0 +1,12 @@
+FROM python:3
+
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
+
+WORKDIR /opt
+
+COPY docker_entrypoint.sh .
+
+EXPOSE 8001
+
+ENTRYPOINT [ "./docker_entrypoint.sh" ]
