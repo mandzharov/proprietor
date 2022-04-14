@@ -11,4 +11,7 @@ urlpatterns = [
                   path('register/', include('proprietor.register.urls')),
                   path('building/', include('proprietor.building.urls')),
                   path("my_apartments/", MyApartmentsView.as_view(), name="my apartments"),
-              ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+              ]
+
+if bool(settings.DEBUG):
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

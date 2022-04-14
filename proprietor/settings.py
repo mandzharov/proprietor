@@ -114,13 +114,16 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
+if DEBUG:
+    STATICFILES_DIRS = [
+        BASE_DIR / 'static'
+    ]
+else:
+    STATIC_ROOT = BASE_DIR / 'static/'
 
-STATICFILES_DIRS = [
-    BASE_DIR / 'static'
-]
 
 MEDIA_URL = 'images/'
-MEDIA_ROOT = BASE_DIR / 'image_uploads'
+MEDIA_ROOT = BASE_DIR / 'images/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
@@ -128,3 +131,19 @@ MEDIA_ROOT = BASE_DIR / 'image_uploads'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'register.AppUser'
+
+CSRF_TRUSTED_ORIGINS = ["http://localhost:8002", "http://0.0.0.0:8002"]
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'root': {
+        'handlers': ['console'],
+        'level': 'DEBUG',
+    },
+}

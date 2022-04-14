@@ -54,12 +54,16 @@ class ProfileDetailsView(gen_views.DetailView):
 class AddProfileView(auth_mixins.LoginRequiredMixin, gen_views.CreateView):
     form_class = CreateProfileForm
     template_name = 'register/profile.html'
-    success_url = reverse_lazy('home page')
 
     def get_form_kwargs(self):
         kwargs = super().get_form_kwargs()
         kwargs['user'] = self.request.user
         return kwargs
+    
+    def get_success_url(self) -> str:
+        user_pk = self.request.user.pk
+        url = reverse_lazy('view profile', kwargs={'pk': user_pk})
+        return url
 
 
 class EditProfileView(auth_mixins.LoginRequiredMixin, gen_views.UpdateView):
@@ -75,11 +79,15 @@ class EditProfileView(auth_mixins.LoginRequiredMixin, gen_views.UpdateView):
         'phone_code',
         'phone',
     ]
-    success_url = reverse_lazy('home page')
 
     def get_queryset(self):
         queryset = super().get_queryset().filter(user=self.request.user)
         return queryset
+    
+    def get_success_url(self) -> str:
+        user_pk = self.request.user.pk
+        url = reverse_lazy('view profile', kwargs={'pk': user_pk})
+        return url
 
 
 class DeleteProfileView(auth_mixins.LoginRequiredMixin, gen_views.DeleteView):
