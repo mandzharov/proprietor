@@ -1,4 +1,4 @@
-# A Django test project
+# Django test project
 
 The idea of the site is to make a digital building management system.
 
