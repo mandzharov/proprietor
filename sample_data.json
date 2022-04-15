@@ -1,0 +1,2014 @@
+[
+{
+    "model": "admin.logentry",
+    "pk": 1,
+    "fields": {
+        "action_time": "2022-04-15T16:23:46.538Z",
+        "user": 1,
+        "content_type": 13,
+        "object_id": "1",
+        "object_repr": "+359",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 2,
+    "fields": {
+        "action_time": "2022-04-15T16:29:05.851Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "1",
+        "object_repr": "Mladost 1 34",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 3,
+    "fields": {
+        "action_time": "2022-04-15T16:30:37.200Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "2",
+        "object_repr": "Patriarh Evtimi blvd. 45",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 4,
+    "fields": {
+        "action_time": "2022-04-15T16:31:26.410Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "3",
+        "object_repr": "Car Asen str. 34",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 5,
+    "fields": {
+        "action_time": "2022-04-15T16:34:11.648Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "4",
+        "object_repr": "Fritiof Nansen str. 31",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 6,
+    "fields": {
+        "action_time": "2022-04-15T16:35:57.752Z",
+        "user": 1,
+        "content_type": 3,
+        "object_id": "1",
+        "object_repr": "Managers",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 7,
+    "fields": {
+        "action_time": "2022-04-15T16:37:02.577Z",
+        "user": 1,
+        "content_type": 3,
+        "object_id": "2",
+        "object_repr": "Users",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 8,
+    "fields": {
+        "action_time": "2022-04-15T16:39:47.548Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "2",
+        "object_repr": "jeffrey.dahmer@killer.com",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 9,
+    "fields": {
+        "action_time": "2022-04-15T16:41:39.373Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "3",
+        "object_repr": "edmund.kemper@killer.com",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 10,
+    "fields": {
+        "action_time": "2022-04-15T16:46:11.045Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "4",
+        "object_repr": "mikhail.popkov@killer.com",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 11,
+    "fields": {
+        "action_time": "2022-04-15T16:51:26.971Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "5",
+        "object_repr": "katherine.knight@killer.com",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 12,
+    "fields": {
+        "action_time": "2022-04-15T16:56:43.274Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "6",
+        "object_repr": "andrei.chikatilo@killer.com",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 13,
+    "fields": {
+        "action_time": "2022-04-15T16:57:10.362Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "4",
+        "object_repr": "Fritiof Nansen str. 31",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Manager\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 14,
+    "fields": {
+        "action_time": "2022-04-15T16:57:18.667Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "3",
+        "object_repr": "Car Asen str. 34",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Manager\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 15,
+    "fields": {
+        "action_time": "2022-04-15T16:57:33.068Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "2",
+        "object_repr": "Patriarh Evtimi blvd. 45",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Manager\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 16,
+    "fields": {
+        "action_time": "2022-04-15T16:57:39.936Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "1",
+        "object_repr": "Mladost 1 34",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Manager\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 17,
+    "fields": {
+        "action_time": "2022-04-15T17:09:32.099Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "6",
+        "object_repr": "andrei.chikatilo@killer.com",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 18,
+    "fields": {
+        "action_time": "2022-04-15T17:09:32.113Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "5",
+        "object_repr": "katherine.knight@killer.com",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 19,
+    "fields": {
+        "action_time": "2022-04-15T17:09:32.119Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "4",
+        "object_repr": "mikhail.popkov@killer.com",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 20,
+    "fields": {
+        "action_time": "2022-04-15T17:09:32.126Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "3",
+        "object_repr": "edmund.kemper@killer.com",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 21,
+    "fields": {
+        "action_time": "2022-04-15T17:09:32.133Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "2",
+        "object_repr": "jeffrey.dahmer@killer.com",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 22,
+    "fields": {
+        "action_time": "2022-04-15T17:18:18.159Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "10",
+        "object_repr": "katherine.knight@killer.com",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Groups\", \"Is staff\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 23,
+    "fields": {
+        "action_time": "2022-04-15T17:18:25.547Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "9",
+        "object_repr": "mikhail.popkov@killer.com",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Groups\", \"Is staff\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 24,
+    "fields": {
+        "action_time": "2022-04-15T17:18:32.611Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "8",
+        "object_repr": "edmund.kemper@killer.com",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Groups\", \"Is staff\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 25,
+    "fields": {
+        "action_time": "2022-04-15T17:18:41.821Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "7",
+        "object_repr": "jeffrey.dahmer@killer.com",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Groups\", \"Is staff\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 26,
+    "fields": {
+        "action_time": "2022-04-15T17:18:47.148Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "11",
+        "object_repr": "andrei.chikatilo@killer.com",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Groups\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 27,
+    "fields": {
+        "action_time": "2022-04-15T17:19:00.832Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "4",
+        "object_repr": "Fritiof Nansen str. 31",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Manager\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 28,
+    "fields": {
+        "action_time": "2022-04-15T17:19:06.248Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "3",
+        "object_repr": "Car Asen str. 34",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Manager\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 29,
+    "fields": {
+        "action_time": "2022-04-15T17:19:13.760Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "2",
+        "object_repr": "Patriarh Evtimi blvd. 45",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Manager\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 30,
+    "fields": {
+        "action_time": "2022-04-15T17:19:18.904Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "1",
+        "object_repr": "Mladost 1 34",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Manager\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 31,
+    "fields": {
+        "action_time": "2022-04-15T17:28:45.445Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "4",
+        "object_repr": "Fritiof Nansen str. 31",
+        "action_flag": 2,
+        "change_message": "[{\"added\": {\"name\": \"apartment\", \"object\": \"Fritiof Nansen str. 31 fl.1 ap.1\"}}, {\"added\": {\"name\": \"apartment\", \"object\": \"Fritiof Nansen str. 31 fl.1 ap.2\"}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 32,
+    "fields": {
+        "action_time": "2022-04-15T17:29:02.347Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "4",
+        "object_repr": "Fritiof Nansen str. 31",
+        "action_flag": 2,
+        "change_message": "[]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 33,
+    "fields": {
+        "action_time": "2022-04-15T17:30:42.890Z",
+        "user": 1,
+        "content_type": 6,
+        "object_id": "3",
+        "object_repr": "Fritiof Nansen str. 31 fl.2 ap.3",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 34,
+    "fields": {
+        "action_time": "2022-04-15T17:31:46.849Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "3",
+        "object_repr": "Car Asen str. 34",
+        "action_flag": 2,
+        "change_message": "[{\"added\": {\"name\": \"apartment\", \"object\": \"Car Asen str. 34 fl.1 ap.1\"}}, {\"added\": {\"name\": \"apartment\", \"object\": \"Car Asen str. 34 fl.1 ap.2\"}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 35,
+    "fields": {
+        "action_time": "2022-04-15T17:32:39.004Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "2",
+        "object_repr": "Patriarh Evtimi blvd. 45",
+        "action_flag": 2,
+        "change_message": "[{\"added\": {\"name\": \"apartment\", \"object\": \"Patriarh Evtimi blvd. 45 fl.1 ap.1\"}}, {\"added\": {\"name\": \"apartment\", \"object\": \"Patriarh Evtimi blvd. 45 fl.2 ap.4\"}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 36,
+    "fields": {
+        "action_time": "2022-04-15T17:33:55.757Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "1",
+        "object_repr": "Mladost 1 34",
+        "action_flag": 2,
+        "change_message": "[{\"added\": {\"name\": \"apartment\", \"object\": \"Mladost 1 34 fl.4 ap.14\"}}, {\"added\": {\"name\": \"apartment\", \"object\": \"Mladost 1 34 fl.6 ap.18\"}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 37,
+    "fields": {
+        "action_time": "2022-04-15T17:37:25.482Z",
+        "user": 1,
+        "content_type": 6,
+        "object_id": "10",
+        "object_repr": "Mladost 1 34 fl.12 ap.32",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 38,
+    "fields": {
+        "action_time": "2022-04-15T17:38:14.852Z",
+        "user": 1,
+        "content_type": 6,
+        "object_id": "10",
+        "object_repr": "Mladost 1 34 fl.12 ap.32",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Description\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 39,
+    "fields": {
+        "action_time": "2022-04-15T17:55:51.767Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "5",
+        "object_repr": "Neofit Rilski str 16",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"apartment\", \"object\": \"Neofit Rilski str 16 fl.2 ap.3\"}}]"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 1,
+    "fields": {
+        "name": "Can add log entry",
+        "content_type": 1,
+        "codename": "add_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 2,
+    "fields": {
+        "name": "Can change log entry",
+        "content_type": 1,
+        "codename": "change_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 3,
+    "fields": {
+        "name": "Can delete log entry",
+        "content_type": 1,
+        "codename": "delete_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 4,
+    "fields": {
+        "name": "Can view log entry",
+        "content_type": 1,
+        "codename": "view_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 5,
+    "fields": {
+        "name": "Can add permission",
+        "content_type": 2,
+        "codename": "add_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 6,
+    "fields": {
+        "name": "Can change permission",
+        "content_type": 2,
+        "codename": "change_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 7,
+    "fields": {
+        "name": "Can delete permission",
+        "content_type": 2,
+        "codename": "delete_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 8,
+    "fields": {
+        "name": "Can view permission",
+        "content_type": 2,
+        "codename": "view_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 9,
+    "fields": {
+        "name": "Can add group",
+        "content_type": 3,
+        "codename": "add_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 10,
+    "fields": {
+        "name": "Can change group",
+        "content_type": 3,
+        "codename": "change_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 11,
+    "fields": {
+        "name": "Can delete group",
+        "content_type": 3,
+        "codename": "delete_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 12,
+    "fields": {
+        "name": "Can view group",
+        "content_type": 3,
+        "codename": "view_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 13,
+    "fields": {
+        "name": "Can add content type",
+        "content_type": 4,
+        "codename": "add_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 14,
+    "fields": {
+        "name": "Can change content type",
+        "content_type": 4,
+        "codename": "change_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 15,
+    "fields": {
+        "name": "Can delete content type",
+        "content_type": 4,
+        "codename": "delete_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 16,
+    "fields": {
+        "name": "Can view content type",
+        "content_type": 4,
+        "codename": "view_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 17,
+    "fields": {
+        "name": "Can add session",
+        "content_type": 5,
+        "codename": "add_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 18,
+    "fields": {
+        "name": "Can change session",
+        "content_type": 5,
+        "codename": "change_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 19,
+    "fields": {
+        "name": "Can delete session",
+        "content_type": 5,
+        "codename": "delete_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 20,
+    "fields": {
+        "name": "Can view session",
+        "content_type": 5,
+        "codename": "view_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 21,
+    "fields": {
+        "name": "Can add apartment",
+        "content_type": 6,
+        "codename": "add_apartment"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 22,
+    "fields": {
+        "name": "Can change apartment",
+        "content_type": 6,
+        "codename": "change_apartment"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 23,
+    "fields": {
+        "name": "Can delete apartment",
+        "content_type": 6,
+        "codename": "delete_apartment"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 24,
+    "fields": {
+        "name": "Can view apartment",
+        "content_type": 6,
+        "codename": "view_apartment"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 25,
+    "fields": {
+        "name": "Can add building",
+        "content_type": 7,
+        "codename": "add_building"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 26,
+    "fields": {
+        "name": "Can change building",
+        "content_type": 7,
+        "codename": "change_building"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 27,
+    "fields": {
+        "name": "Can delete building",
+        "content_type": 7,
+        "codename": "delete_building"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 28,
+    "fields": {
+        "name": "Can view building",
+        "content_type": 7,
+        "codename": "view_building"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 29,
+    "fields": {
+        "name": "Can add utility type",
+        "content_type": 8,
+        "codename": "add_utilitytype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 30,
+    "fields": {
+        "name": "Can change utility type",
+        "content_type": 8,
+        "codename": "change_utilitytype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 31,
+    "fields": {
+        "name": "Can delete utility type",
+        "content_type": 8,
+        "codename": "delete_utilitytype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 32,
+    "fields": {
+        "name": "Can view utility type",
+        "content_type": 8,
+        "codename": "view_utilitytype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 33,
+    "fields": {
+        "name": "Can add utilities expenses",
+        "content_type": 9,
+        "codename": "add_utilitiesexpenses"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 34,
+    "fields": {
+        "name": "Can change utilities expenses",
+        "content_type": 9,
+        "codename": "change_utilitiesexpenses"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 35,
+    "fields": {
+        "name": "Can delete utilities expenses",
+        "content_type": 9,
+        "codename": "delete_utilitiesexpenses"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 36,
+    "fields": {
+        "name": "Can view utilities expenses",
+        "content_type": 9,
+        "codename": "view_utilitiesexpenses"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 37,
+    "fields": {
+        "name": "Can add building income",
+        "content_type": 10,
+        "codename": "add_buildingincome"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 38,
+    "fields": {
+        "name": "Can change building income",
+        "content_type": 10,
+        "codename": "change_buildingincome"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 39,
+    "fields": {
+        "name": "Can delete building income",
+        "content_type": 10,
+        "codename": "delete_buildingincome"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 40,
+    "fields": {
+        "name": "Can view building income",
+        "content_type": 10,
+        "codename": "view_buildingincome"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 41,
+    "fields": {
+        "name": "Can add building expenses",
+        "content_type": 11,
+        "codename": "add_buildingexpenses"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 42,
+    "fields": {
+        "name": "Can change building expenses",
+        "content_type": 11,
+        "codename": "change_buildingexpenses"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 43,
+    "fields": {
+        "name": "Can delete building expenses",
+        "content_type": 11,
+        "codename": "delete_buildingexpenses"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 44,
+    "fields": {
+        "name": "Can view building expenses",
+        "content_type": 11,
+        "codename": "view_buildingexpenses"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 45,
+    "fields": {
+        "name": "Can add app user",
+        "content_type": 12,
+        "codename": "add_appuser"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 46,
+    "fields": {
+        "name": "Can change app user",
+        "content_type": 12,
+        "codename": "change_appuser"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 47,
+    "fields": {
+        "name": "Can delete app user",
+        "content_type": 12,
+        "codename": "delete_appuser"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 48,
+    "fields": {
+        "name": "Can view app user",
+        "content_type": 12,
+        "codename": "view_appuser"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 49,
+    "fields": {
+        "name": "Can add country codes",
+        "content_type": 13,
+        "codename": "add_countrycodes"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 50,
+    "fields": {
+        "name": "Can change country codes",
+        "content_type": 13,
+        "codename": "change_countrycodes"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 51,
+    "fields": {
+        "name": "Can delete country codes",
+        "content_type": 13,
+        "codename": "delete_countrycodes"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 52,
+    "fields": {
+        "name": "Can view country codes",
+        "content_type": 13,
+        "codename": "view_countrycodes"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 53,
+    "fields": {
+        "name": "Can add profile",
+        "content_type": 14,
+        "codename": "add_profile"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 54,
+    "fields": {
+        "name": "Can change profile",
+        "content_type": 14,
+        "codename": "change_profile"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 55,
+    "fields": {
+        "name": "Can delete profile",
+        "content_type": 14,
+        "codename": "delete_profile"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 56,
+    "fields": {
+        "name": "Can view profile",
+        "content_type": 14,
+        "codename": "view_profile"
+    }
+},
+{
+    "model": "auth.group",
+    "pk": 1,
+    "fields": {
+        "name": "Managers",
+        "permissions": [
+            21,
+            22,
+            23,
+            24,
+            41,
+            42,
+            43,
+            44,
+            37,
+            38,
+            39,
+            40,
+            29,
+            30,
+            31,
+            32
+        ]
+    }
+},
+{
+    "model": "auth.group",
+    "pk": 2,
+    "fields": {
+        "name": "Users",
+        "permissions": [
+            24,
+            28,
+            33,
+            34,
+            35,
+            36,
+            32
+        ]
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 1,
+    "fields": {
+        "app_label": "admin",
+        "model": "logentry"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 2,
+    "fields": {
+        "app_label": "auth",
+        "model": "permission"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 3,
+    "fields": {
+        "app_label": "auth",
+        "model": "group"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 4,
+    "fields": {
+        "app_label": "contenttypes",
+        "model": "contenttype"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 5,
+    "fields": {
+        "app_label": "sessions",
+        "model": "session"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 6,
+    "fields": {
+        "app_label": "building",
+        "model": "apartment"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 7,
+    "fields": {
+        "app_label": "building",
+        "model": "building"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 8,
+    "fields": {
+        "app_label": "building",
+        "model": "utilitytype"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 9,
+    "fields": {
+        "app_label": "building",
+        "model": "utilitiesexpenses"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 10,
+    "fields": {
+        "app_label": "building",
+        "model": "buildingincome"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 11,
+    "fields": {
+        "app_label": "building",
+        "model": "buildingexpenses"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 12,
+    "fields": {
+        "app_label": "register",
+        "model": "appuser"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 13,
+    "fields": {
+        "app_label": "register",
+        "model": "countrycodes"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 14,
+    "fields": {
+        "app_label": "register",
+        "model": "profile"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "98eisvrheydvca8s91k7cjc1y1lyirie",
+    "fields": {
+        "session_data": ".eJxVjDsOwjAQRO_iGln-4B8lPWew1us1DiBbipMKcXcSKQV0o3lv5s0irEuN66A5TpldmGSn3y4BPqntID-g3TvH3pZ5SnxX-EEHv_VMr-vh_h1UGHVbF0fKClG01snYrH0SCLRlQ8Kmsyzg0VsDQfsgpS6yOKUcukQBZS7APl_dPjf-:1nfPrs:ewmFrkli4tTgUwTunee7AVvwBEunG2IEl-Vv3Hv-bpA",
+        "expire_date": "2022-04-29T17:36:24.083Z"
+    }
+},
+{
+    "model": "building.building",
+    "pk": 1,
+    "fields": {
+        "city": "Sofia",
+        "street_address": "Mladost 1",
+        "block_number": "34",
+        "postal_code": "1000",
+        "floors_count": 14,
+        "alias": null,
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras lobortis condimentum posuere. Nam maximus, tortor.",
+        "manager": 10
+    }
+},
+{
+    "model": "building.building",
+    "pk": 2,
+    "fields": {
+        "city": "Sofia",
+        "street_address": "Patriarh Evtimi blvd.",
+        "block_number": "45",
+        "postal_code": "1000",
+        "floors_count": 6,
+        "alias": null,
+        "description": "Praesent fermentum urna quis lorem viverra feugiat. Mauris posuere pulvinar sapien, at ultricies elit molestie et. Pellentesque lacinia lacus sed vulputate egestas. Proin.",
+        "manager": 9
+    }
+},
+{
+    "model": "building.building",
+    "pk": 3,
+    "fields": {
+        "city": "Sofia",
+        "street_address": "Car Asen str.",
+        "block_number": "34",
+        "postal_code": "1000",
+        "floors_count": 5,
+        "alias": null,
+        "description": "Fusce tempus malesuada arcu, nec iaculis enim. Sed eget varius nulla. Curabitur dapibus odio iaculis porttitor.",
+        "manager": 8
+    }
+},
+{
+    "model": "building.building",
+    "pk": 4,
+    "fields": {
+        "city": "Sofia",
+        "street_address": "Fritiof Nansen str.",
+        "block_number": "31",
+        "postal_code": "1142",
+        "floors_count": 6,
+        "alias": null,
+        "description": "Aliquam egestas egestas eros a ornare.",
+        "manager": 7
+    }
+},
+{
+    "model": "building.building",
+    "pk": 5,
+    "fields": {
+        "city": "Sofia",
+        "street_address": "Neofit Rilski str",
+        "block_number": "16",
+        "postal_code": "1000",
+        "floors_count": 6,
+        "alias": null,
+        "description": "Just another building",
+        "manager": 7
+    }
+},
+{
+    "model": "building.apartment",
+    "pk": 1,
+    "fields": {
+        "building": 4,
+        "floor": 1,
+        "number": "1",
+        "area": 60.0,
+        "rooms_count": 2,
+        "share": 8.2,
+        "description": "",
+        "owner": [
+            7
+        ]
+    }
+},
+{
+    "model": "building.apartment",
+    "pk": 2,
+    "fields": {
+        "building": 4,
+        "floor": 1,
+        "number": "2",
+        "area": 123.0,
+        "rooms_count": 3,
+        "share": 11.3,
+        "description": "",
+        "owner": [
+            1
+        ]
+    }
+},
+{
+    "model": "building.apartment",
+    "pk": 3,
+    "fields": {
+        "building": 4,
+        "floor": 2,
+        "number": "3",
+        "area": 66.0,
+        "rooms_count": 2,
+        "share": 8.03,
+        "description": "",
+        "owner": [
+            11
+        ]
+    }
+},
+{
+    "model": "building.apartment",
+    "pk": 4,
+    "fields": {
+        "building": 3,
+        "floor": 1,
+        "number": "1",
+        "area": 45.0,
+        "rooms_count": 1,
+        "share": 6.0,
+        "description": "",
+        "owner": [
+            8
+        ]
+    }
+},
+{
+    "model": "building.apartment",
+    "pk": 5,
+    "fields": {
+        "building": 3,
+        "floor": 1,
+        "number": "2",
+        "area": 76.0,
+        "rooms_count": 2,
+        "share": 5.4,
+        "description": "",
+        "owner": [
+            10
+        ]
+    }
+},
+{
+    "model": "building.apartment",
+    "pk": 6,
+    "fields": {
+        "building": 2,
+        "floor": 1,
+        "number": "1",
+        "area": 121.0,
+        "rooms_count": 3,
+        "share": 12.0,
+        "description": "",
+        "owner": [
+            9
+        ]
+    }
+},
+{
+    "model": "building.apartment",
+    "pk": 7,
+    "fields": {
+        "building": 2,
+        "floor": 2,
+        "number": "4",
+        "area": 88.0,
+        "rooms_count": 3,
+        "share": 11.2,
+        "description": "",
+        "owner": [
+            10
+        ]
+    }
+},
+{
+    "model": "building.apartment",
+    "pk": 8,
+    "fields": {
+        "building": 1,
+        "floor": 4,
+        "number": "14",
+        "area": 142.0,
+        "rooms_count": 5,
+        "share": 15.0,
+        "description": "",
+        "owner": [
+            10
+        ]
+    }
+},
+{
+    "model": "building.apartment",
+    "pk": 9,
+    "fields": {
+        "building": 1,
+        "floor": 6,
+        "number": "18",
+        "area": 69.0,
+        "rooms_count": 2,
+        "share": 9.3,
+        "description": "",
+        "owner": [
+            9
+        ]
+    }
+},
+{
+    "model": "building.apartment",
+    "pk": 10,
+    "fields": {
+        "building": 1,
+        "floor": 12,
+        "number": "32",
+        "area": 116.0,
+        "rooms_count": 4,
+        "share": 12.0,
+        "description": "My main family apartment",
+        "owner": [
+            7
+        ]
+    }
+},
+{
+    "model": "building.apartment",
+    "pk": 11,
+    "fields": {
+        "building": 5,
+        "floor": 2,
+        "number": "3",
+        "area": 132.0,
+        "rooms_count": 5,
+        "share": 12.0,
+        "description": "",
+        "owner": [
+            1
+        ]
+    }
+},
+{
+    "model": "building.utilitytype",
+    "pk": 1,
+    "fields": {
+        "name": "Electricity",
+        "description": "CEZ sa gadove mrasni"
+    }
+},
+{
+    "model": "building.utilitytype",
+    "pk": 2,
+    "fields": {
+        "name": "Water",
+        "description": "V&K"
+    }
+},
+{
+    "model": "building.utilitytype",
+    "pk": 3,
+    "fields": {
+        "name": "Gas",
+        "description": "Nema gaz tuka"
+    }
+},
+{
+    "model": "building.utilitytype",
+    "pk": 4,
+    "fields": {
+        "name": "Heating",
+        "description": "Toplofikacia sa kreteni"
+    }
+},
+{
+    "model": "building.utilitytype",
+    "pk": 5,
+    "fields": {
+        "name": "Internet",
+        "description": "Evala"
+    }
+},
+{
+    "model": "building.utilitytype",
+    "pk": 6,
+    "fields": {
+        "name": "TV",
+        "description": "see phone"
+    }
+},
+{
+    "model": "building.utilitytype",
+    "pk": 7,
+    "fields": {
+        "name": "Phone",
+        "description": "A1 bastuni"
+    }
+},
+{
+    "model": "building.utilitytype",
+    "pk": 8,
+    "fields": {
+        "name": "Communal",
+        "description": "Chicho pesho e velik"
+    }
+},
+{
+    "model": "building.utilitytype",
+    "pk": 9,
+    "fields": {
+        "name": "Taxes",
+        "description": "OMG"
+    }
+},
+{
+    "model": "building.utilitytype",
+    "pk": 10,
+    "fields": {
+        "name": "Other",
+        "description": ""
+    }
+},
+{
+    "model": "building.utilitiesexpenses",
+    "pk": 1,
+    "fields": {
+        "utility_type": 1,
+        "amount": "63.40",
+        "bill_year": 2022,
+        "bill_month": "JAN",
+        "entry_dt": "2022-04-15T17:39:51.739Z",
+        "apartment": 10
+    }
+},
+{
+    "model": "building.utilitiesexpenses",
+    "pk": 2,
+    "fields": {
+        "utility_type": 1,
+        "amount": "56.66",
+        "bill_year": 2022,
+        "bill_month": "FEB",
+        "entry_dt": "2022-04-15T17:40:09.542Z",
+        "apartment": 10
+    }
+},
+{
+    "model": "building.utilitiesexpenses",
+    "pk": 3,
+    "fields": {
+        "utility_type": 1,
+        "amount": "51.12",
+        "bill_year": 2022,
+        "bill_month": "MAR",
+        "entry_dt": "2022-04-15T17:40:28.704Z",
+        "apartment": 10
+    }
+},
+{
+    "model": "building.utilitiesexpenses",
+    "pk": 4,
+    "fields": {
+        "utility_type": 1,
+        "amount": "49.59",
+        "bill_year": 2021,
+        "bill_month": "DEC",
+        "entry_dt": "2022-04-15T17:41:09.721Z",
+        "apartment": 10
+    }
+},
+{
+    "model": "building.utilitiesexpenses",
+    "pk": 5,
+    "fields": {
+        "utility_type": 1,
+        "amount": "51.10",
+        "bill_year": 2021,
+        "bill_month": "OCT",
+        "entry_dt": "2022-04-15T17:42:00.305Z",
+        "apartment": 10
+    }
+},
+{
+    "model": "building.utilitiesexpenses",
+    "pk": 6,
+    "fields": {
+        "utility_type": 4,
+        "amount": "132.00",
+        "bill_year": 2022,
+        "bill_month": "MAR",
+        "entry_dt": "2022-04-15T17:42:43.095Z",
+        "apartment": 10
+    }
+},
+{
+    "model": "building.utilitiesexpenses",
+    "pk": 7,
+    "fields": {
+        "utility_type": 4,
+        "amount": "126.56",
+        "bill_year": 2022,
+        "bill_month": "FEB",
+        "entry_dt": "2022-04-15T17:43:02.051Z",
+        "apartment": 10
+    }
+},
+{
+    "model": "building.utilitiesexpenses",
+    "pk": 8,
+    "fields": {
+        "utility_type": 4,
+        "amount": "100.34",
+        "bill_year": 2022,
+        "bill_month": "JAN",
+        "entry_dt": "2022-04-15T17:43:22.774Z",
+        "apartment": 10
+    }
+},
+{
+    "model": "building.utilitiesexpenses",
+    "pk": 9,
+    "fields": {
+        "utility_type": 4,
+        "amount": "111.11",
+        "bill_year": 2021,
+        "bill_month": "DEC",
+        "entry_dt": "2022-04-15T17:44:09.832Z",
+        "apartment": 10
+    }
+},
+{
+    "model": "building.utilitiesexpenses",
+    "pk": 10,
+    "fields": {
+        "utility_type": 4,
+        "amount": "133.30",
+        "bill_year": 2021,
+        "bill_month": "NOV",
+        "entry_dt": "2022-04-15T17:44:48.792Z",
+        "apartment": 10
+    }
+},
+{
+    "model": "building.utilitiesexpenses",
+    "pk": 11,
+    "fields": {
+        "utility_type": 2,
+        "amount": "6.00",
+        "bill_year": 2022,
+        "bill_month": "MAR",
+        "entry_dt": "2022-04-15T17:45:31.248Z",
+        "apartment": 10
+    }
+},
+{
+    "model": "building.utilitiesexpenses",
+    "pk": 12,
+    "fields": {
+        "utility_type": 2,
+        "amount": "6.40",
+        "bill_year": 2022,
+        "bill_month": "FEB",
+        "entry_dt": "2022-04-15T17:45:46.943Z",
+        "apartment": 10
+    }
+},
+{
+    "model": "building.utilitiesexpenses",
+    "pk": 13,
+    "fields": {
+        "utility_type": 2,
+        "amount": "2.01",
+        "bill_year": 2022,
+        "bill_month": "JAN",
+        "entry_dt": "2022-04-15T17:46:02.365Z",
+        "apartment": 10
+    }
+},
+{
+    "model": "building.utilitiesexpenses",
+    "pk": 14,
+    "fields": {
+        "utility_type": 2,
+        "amount": "3.15",
+        "bill_year": 2021,
+        "bill_month": "DEC",
+        "entry_dt": "2022-04-15T17:46:22.180Z",
+        "apartment": 10
+    }
+},
+{
+    "model": "building.utilitiesexpenses",
+    "pk": 15,
+    "fields": {
+        "utility_type": 2,
+        "amount": "13.30",
+        "bill_year": 2021,
+        "bill_month": "NOV",
+        "entry_dt": "2022-04-15T17:46:56.383Z",
+        "apartment": 10
+    }
+},
+{
+    "model": "building.utilitiesexpenses",
+    "pk": 16,
+    "fields": {
+        "utility_type": 5,
+        "amount": "15.00",
+        "bill_year": 2022,
+        "bill_month": "MAR",
+        "entry_dt": "2022-04-15T17:47:29.847Z",
+        "apartment": 10
+    }
+},
+{
+    "model": "building.utilitiesexpenses",
+    "pk": 17,
+    "fields": {
+        "utility_type": 5,
+        "amount": "15.00",
+        "bill_year": 2022,
+        "bill_month": "FEB",
+        "entry_dt": "2022-04-15T17:47:41.490Z",
+        "apartment": 10
+    }
+},
+{
+    "model": "building.utilitiesexpenses",
+    "pk": 18,
+    "fields": {
+        "utility_type": 5,
+        "amount": "15.00",
+        "bill_year": 2022,
+        "bill_month": "JAN",
+        "entry_dt": "2022-04-15T17:47:51.239Z",
+        "apartment": 10
+    }
+},
+{
+    "model": "building.utilitiesexpenses",
+    "pk": 19,
+    "fields": {
+        "utility_type": 5,
+        "amount": "15.00",
+        "bill_year": 2021,
+        "bill_month": "DEC",
+        "entry_dt": "2022-04-15T17:48:04.975Z",
+        "apartment": 10
+    }
+},
+{
+    "model": "building.utilitiesexpenses",
+    "pk": 20,
+    "fields": {
+        "utility_type": 5,
+        "amount": "15.00",
+        "bill_year": 2021,
+        "bill_month": "NOV",
+        "entry_dt": "2022-04-15T17:48:20.290Z",
+        "apartment": 10
+    }
+},
+{
+    "model": "building.utilitiesexpenses",
+    "pk": 21,
+    "fields": {
+        "utility_type": 6,
+        "amount": "22.00",
+        "bill_year": 2022,
+        "bill_month": "MAR",
+        "entry_dt": "2022-04-15T17:48:43.620Z",
+        "apartment": 10
+    }
+},
+{
+    "model": "building.utilitiesexpenses",
+    "pk": 22,
+    "fields": {
+        "utility_type": 6,
+        "amount": "22.00",
+        "bill_year": 2022,
+        "bill_month": "FEB",
+        "entry_dt": "2022-04-15T17:48:56.410Z",
+        "apartment": 10
+    }
+},
+{
+    "model": "building.utilitiesexpenses",
+    "pk": 23,
+    "fields": {
+        "utility_type": 6,
+        "amount": "22.00",
+        "bill_year": 2022,
+        "bill_month": "JAN",
+        "entry_dt": "2022-04-15T17:49:09.223Z",
+        "apartment": 10
+    }
+},
+{
+    "model": "building.utilitiesexpenses",
+    "pk": 24,
+    "fields": {
+        "utility_type": 1,
+        "amount": "33.00",
+        "bill_year": 2022,
+        "bill_month": "MAR",
+        "entry_dt": "2022-04-15T17:49:55.498Z",
+        "apartment": 1
+    }
+},
+{
+    "model": "building.utilitiesexpenses",
+    "pk": 25,
+    "fields": {
+        "utility_type": 4,
+        "amount": "66.00",
+        "bill_year": 2022,
+        "bill_month": "JAN",
+        "entry_dt": "2022-04-15T17:50:11.845Z",
+        "apartment": 1
+    }
+},
+{
+    "model": "building.utilitiesexpenses",
+    "pk": 26,
+    "fields": {
+        "utility_type": 1,
+        "amount": "34.00",
+        "bill_year": 2022,
+        "bill_month": "JAN",
+        "entry_dt": "2022-04-15T18:01:48.745Z",
+        "apartment": 3
+    }
+},
+{
+    "model": "building.utilitiesexpenses",
+    "pk": 27,
+    "fields": {
+        "utility_type": 3,
+        "amount": "44.00",
+        "bill_year": 2022,
+        "bill_month": "JAN",
+        "entry_dt": "2022-04-15T18:02:04.834Z",
+        "apartment": 3
+    }
+},
+{
+    "model": "register.appuser",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$320000$tIQjjULqFV3EwlJAv8VQsJ$fIXOeNy0VJOY39SrzIH3lLZRbBuqjZ141PLCYgI3h3E=",
+        "last_login": "2022-04-15T17:36:24.077Z",
+        "is_superuser": true,
+        "email": "todor.zhivkov@bkp.com",
+        "created_dt": "2022-04-15T16:08:21.411Z",
+        "is_staff": true,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "register.appuser",
+    "pk": 7,
+    "fields": {
+        "password": "pbkdf2_sha256$320000$uayxzXN58YcOiUQNNLUCC1$2ifBoUD2KbjX8VcavxNW97D0Ydb7hS+SGMgxvpIzzyU=",
+        "last_login": "2022-04-15T17:34:54.787Z",
+        "is_superuser": false,
+        "email": "jeffrey.dahmer@killer.com",
+        "created_dt": "2022-04-15T17:09:58.021Z",
+        "is_staff": true,
+        "groups": [
+            1,
+            2
+        ],
+        "user_permissions": []
+    }
+},
+{
+    "model": "register.appuser",
+    "pk": 8,
+    "fields": {
+        "password": "pbkdf2_sha256$320000$BiO4ATGF4CB4Cnd0YBQsA3$O6KKCqfNWQCTTd+0+H+CPolpIuzYvaryAubEtJXVQnA=",
+        "last_login": "2022-04-15T17:11:41Z",
+        "is_superuser": false,
+        "email": "edmund.kemper@killer.com",
+        "created_dt": "2022-04-15T17:11:41.194Z",
+        "is_staff": true,
+        "groups": [
+            1,
+            2
+        ],
+        "user_permissions": []
+    }
+},
+{
+    "model": "register.appuser",
+    "pk": 9,
+    "fields": {
+        "password": "pbkdf2_sha256$320000$UY99GLwFnqTAJ7MzAdTEoF$mRUPKsf7P3JlzXZhRIS4Dx6xIUKL1T6op7Bhk9/i16M=",
+        "last_login": "2022-04-15T17:13:18Z",
+        "is_superuser": false,
+        "email": "mikhail.popkov@killer.com",
+        "created_dt": "2022-04-15T17:13:18.710Z",
+        "is_staff": true,
+        "groups": [
+            1,
+            2
+        ],
+        "user_permissions": []
+    }
+},
+{
+    "model": "register.appuser",
+    "pk": 10,
+    "fields": {
+        "password": "pbkdf2_sha256$320000$bzOC5nD4nePxziWpQpL4KI$TuewdnKVIbQcyc8uI9Ia85Ih/D9daKRFaJyJfMKXmdI=",
+        "last_login": "2022-04-15T17:14:47Z",
+        "is_superuser": false,
+        "email": "katherine.knight@killer.com",
+        "created_dt": "2022-04-15T17:14:47.371Z",
+        "is_staff": true,
+        "groups": [
+            1,
+            2
+        ],
+        "user_permissions": []
+    }
+},
+{
+    "model": "register.appuser",
+    "pk": 11,
+    "fields": {
+        "password": "pbkdf2_sha256$320000$ARC6xcTUmpsAaaSAmPE4Ze$nrOdMtLUVVKOiAWxzwmL3UrhTuLgCugBkX0fM0q83sY=",
+        "last_login": "2022-04-15T18:01:24.647Z",
+        "is_superuser": false,
+        "email": "andrei.chikatilo@killer.com",
+        "created_dt": "2022-04-15T17:16:29.183Z",
+        "is_staff": false,
+        "groups": [
+            2
+        ],
+        "user_permissions": []
+    }
+},
+{
+    "model": "register.countrycodes",
+    "pk": 1,
+    "fields": {
+        "name": "Bulgaria",
+        "code": "+359"
+    }
+},
+{
+    "model": "register.profile",
+    "pk": 1,
+    "fields": {
+        "first_name": "Todor",
+        "middle_name": null,
+        "last_name": "Zhivkov",
+        "birth_date": "1911-09-07",
+        "gender": "M",
+        "phone": "888888888",
+        "picture": "todor_zhivkov.jpg",
+        "phone_code": 1
+    }
+},
+{
+    "model": "register.profile",
+    "pk": 7,
+    "fields": {
+        "first_name": "Jeffrey",
+        "middle_name": null,
+        "last_name": "Dahmer",
+        "birth_date": "1960-05-21",
+        "gender": "M",
+        "phone": "123456789",
+        "picture": "jeffrey-dahmer.jpg",
+        "phone_code": 1
+    }
+},
+{
+    "model": "register.profile",
+    "pk": 8,
+    "fields": {
+        "first_name": "Edmund",
+        "middle_name": null,
+        "last_name": "Kemper",
+        "birth_date": "1948-12-18",
+        "gender": "M",
+        "phone": "123123123",
+        "picture": "edmunnd_kemper.jpg",
+        "phone_code": 1
+    }
+},
+{
+    "model": "register.profile",
+    "pk": 9,
+    "fields": {
+        "first_name": "Mikhail",
+        "middle_name": null,
+        "last_name": "Popkov",
+        "birth_date": "1964-03-07",
+        "gender": "M",
+        "phone": "999888777",
+        "picture": "mikhail_popkov.gif",
+        "phone_code": 1
+    }
+},
+{
+    "model": "register.profile",
+    "pk": 10,
+    "fields": {
+        "first_name": "Katherine",
+        "middle_name": null,
+        "last_name": "Knight",
+        "birth_date": "1955-10-24",
+        "gender": "F",
+        "phone": "666123555",
+        "picture": "katherine_knight.jpg",
+        "phone_code": 1
+    }
+},
+{
+    "model": "register.profile",
+    "pk": 11,
+    "fields": {
+        "first_name": "Andrei",
+        "middle_name": null,
+        "last_name": "Chikatilo",
+        "birth_date": "1936-10-16",
+        "gender": "M",
+        "phone": "987654321",
+        "picture": "andrei_chikatilo.jpg",
+        "phone_code": 1
+    }
+}
+]
