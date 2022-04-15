@@ -1,12 +1,9 @@
-FROM python:3
+FROM python:3.9
 
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 
-WORKDIR /opt
+WORKDIR /opt/proprietor
 
-COPY docker_entrypoint.sh .
-
-EXPOSE 8001
-
-ENTRYPOINT [ "./docker_entrypoint.sh" ]
+COPY ./ .
+RUN pip install --upgrade pip && pip install -r requirements.txt
