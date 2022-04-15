@@ -3,7 +3,6 @@ from django.contrib.auth import get_user_model
 from django.contrib.auth.models import Permission
 from django.urls import reverse
 from proprietor.building.models import Apartment, Building
-from django.core import exceptions
 
 
 UserModel = get_user_model()
@@ -98,18 +97,18 @@ class AddApartmentViewTest(TestCase):
         self.apartment_1 = Apartment.objects.create(**APARTMENT_1_DATA)
         self.apartment_1.owner.add(self.user_1)
         self.apartment_1.save()
-    
-    def test_add_apartment_not_logged_in_user_404(self):
+
+    def test_add_apartment_not_logged_in_user_403(self):
         response = self.client.get(reverse('create apartment', kwargs={'pk': self.building.pk}))
-        self.assertEqual(404, response.status_code)
-    
+        self.assertEqual(403, response.status_code)
+
     def test_add_apartment_no_permission_403(self):
         self.building.manager = self.user_1
         self.building.save()
         self.client.login(**USER_1_DATA)
         response = self.client.get(reverse('create apartment', kwargs={'pk': self.building.pk}))
         self.assertEqual(403, response.status_code)
-    
+
     def test_manager_add_apartment_with_permission_success(self):
         self.building.manager = self.user_1
         self.building.save()
@@ -120,12 +119,12 @@ class AddApartmentViewTest(TestCase):
         self.assertTrue(self.user_1.has_perm('building.add_apartment'))
         response = self.client.get(reverse('create apartment', kwargs={'pk': self.building.pk}))
         self.assertEqual(200, response.status_code)
-    
-    def test_not_manager_add_apartment_with_permission_404(self):
+
+    def test_not_manager_add_apartment_with_permission_403(self):
         permission = Permission.objects.get(name='Can add apartment')
         self.user_1.user_permissions.add(permission)
         self.client.login(**USER_1_DATA)
         self.assertTrue(self.user_1.is_authenticated)
         self.assertTrue(self.user_1.has_perm('building.add_apartment'))
         response = self.client.get(reverse('create apartment', kwargs={'pk': self.building.pk}))
-        self.assertEqual(404, response.status_code)
+        self.assertEqual(403, response.status_code)

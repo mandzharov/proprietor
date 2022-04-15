@@ -1,4 +1,4 @@
-from django.core.exceptions import ValidationError
+from django.core import exceptions
 from django.db import IntegrityError
 from django.http import Http404
 from django.urls import reverse_lazy
@@ -10,7 +10,7 @@ class UtilityExpenseDispatchMixin:
     def dispatch(self, request, *args, **kwargs):
         apartment_owners = Apartment.objects.values_list('owner').get(pk=self.kwargs['apt_pk'])
         if self.request.user.pk not in apartment_owners:
-            raise Http404("You don't have permissions to do that")
+            raise exceptions.PermissionDenied("You don't have permissions to do that")
         return super().dispatch(request, *args, **kwargs)
 
 

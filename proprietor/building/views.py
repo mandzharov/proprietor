@@ -1,9 +1,9 @@
 from django.db.models import Avg
-from django.http import Http404
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views import generic as gen_views
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
+from django.core import exceptions
 
 from proprietor.building.forms import CreateExpenseForm, CreateUtilityForm, CreateApartmentForm
 from proprietor.building import helpers
@@ -128,7 +128,7 @@ class AddApartmentView(LoginRequiredMixin, PermissionRequiredMixin, gen_views.Cr
     def dispatch(self, request, *args, **kwargs):
         building = Building.objects.get(pk=self.kwargs['pk'])
         if not building.manager == self.request.user:
-            raise Http404("You don't have permissions to do that")
+            raise exceptions.PermissionDenied("You don't have permissions to do that")
         return super().dispatch(request, *args, **kwargs)
 
     def get_form_kwargs(self):

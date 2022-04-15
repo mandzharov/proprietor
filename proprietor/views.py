@@ -34,7 +34,7 @@ class ManagerAdminView(LoginRequiredMixin, gen_views.ListView):
     def get_queryset(self):
         my_buildings_queryset = Building.objects.filter(manager=self.request.user)
         assigned_users = Apartment.objects.filter(owner__isnull=False).values_list('owner').distinct()
-        pending_users_queryset = AppUser.object.exclude(pk__in=assigned_users)
+        pending_users_queryset = AppUser.objects.exclude(pk__in=assigned_users)
         utility_types_queryset = UtilityType.objects.all()
 
         return my_buildings_queryset, pending_users_queryset, utility_types_queryset
