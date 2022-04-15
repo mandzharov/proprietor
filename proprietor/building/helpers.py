@@ -20,7 +20,6 @@ class UtilityExpenseGetContextMixin:
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['apt_pk'] = self.kwargs['apt_pk']
-        context['building_pk'] = self.kwargs['pk']
         return context
 
 
@@ -43,9 +42,8 @@ class UtilityExpenseGetKwargsFormMixin:
 
 class UtilityExpenseGetSuccessUrlMixin:
     def get_success_url(self):
-        building = self.kwargs['pk']
         apartment = self.kwargs['apt_pk']
-        url = reverse_lazy('list expenses', kwargs={'pk': building, 'apt_pk': apartment})
+        url = reverse_lazy('list expenses', kwargs={'apt_pk': apartment})
         return url.format(**self.object.__dict__)
 
 

@@ -3,7 +3,7 @@
 {% block content %}
     <section class="p-5">
         <div class="container my-3">
-            <a href="{% url 'create expense' building_pk apt_pk %}" class="btn btn-dark">Add new</a>
+            <a href="{% url 'create expense' apt_pk %}" class="btn btn-dark">Add new</a>
             <a href="{% url 'my apartments' %}" class="btn btn-dark">Back</a>
         </div>
         <div class="container bg-light text-center">
@@ -25,9 +25,9 @@
                         <td>{{ object.utility_type }}</td>
                         <td>{{ object.amount }}</td>
                         <td>
-                            <a href="{% url 'edit expense' object.apartment.building.pk object.apartment.pk object.pk %}"
+                            <a href="{% url 'edit expense' object.apartment.pk object.pk %}"
                                class="btn btn-dark">Edit</a> <a
-                                href="{% url 'delete expense' object.apartment.building.pk object.apartment.pk object.pk %}"
+                                href="{% url 'delete expense' object.apartment.pk object.pk %}"
                                 class="btn btn-dark">Delete</a></td>
                     </tr>
                 {% endfor %}

@@ -16,11 +16,11 @@ urlpatterns = [
     path("apartment/<int:apt_pk>/expense/report/", views.ReportView.as_view(),
          name="report"),
 
-    path("<int:pk>/apartment/<int:apt_pk>/expense/list/", views.ListUtilityExpensesView.as_view(),
+    path("apartment/<int:apt_pk>/expense/list/", views.ListUtilityExpensesView.as_view(),
          name="list expenses"),
-    path("<int:pk>/apartment/<int:apt_pk>/expense/create/", views.AddUtilityExpenseView.as_view(), name="create expense"),
-    path("<int:pk>/apartment/<int:apt_pk>/expense/<int:exp_pk>/edit/", views.EditUtilityExpenseView.as_view(),
+    path("apartment/<int:apt_pk>/expense/create/", views.AddUtilityExpenseView.as_view(), name="create expense"),
+    path("apartment/<int:apt_pk>/expense/<int:exp_pk>/edit/", views.EditUtilityExpenseView.as_view(),
          name="edit expense"),
-    path("<int:pk>/apartment/<int:apt_pk>/expense/<int:exp_pk>/delete/", views.DeleteUtilityExpenseView.as_view(),
+    path("apartment/<int:apt_pk>/expense/<int:exp_pk>/delete/", views.DeleteUtilityExpenseView.as_view(),
          name="delete expense"),
 ]

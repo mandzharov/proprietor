@@ -25,7 +25,7 @@
                                             There is no description of this apartment.
                                         {% endif %}
                                     </p>
-                                    <a href="{% url 'list expenses' apartment.building.pk apartment.pk %}"
+                                    <a href="{% url 'list expenses' apartment.pk %}"
                                        class="btn btn-dark m-1">Manage Expenses</a>
                                     <a href="{% url 'report' apartment.pk %}"
                                        class="btn btn-dark m-1">View report</a>

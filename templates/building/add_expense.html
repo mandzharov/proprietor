@@ -16,7 +16,7 @@
                                 <div class="text-danger">{{ field.errors }}</div>
                             {% endfor %}
                             <button type="submit" class="btn btn-dark">Submit</button>
-                            <a href="{% url 'list expenses' building_pk apt_pk %}"
+                            <a href="{% url 'list expenses' apt_pk %}"
                                class="btn btn-dark">Back</a>
                         </form>
                     </div>
