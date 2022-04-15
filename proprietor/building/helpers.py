@@ -6,8 +6,10 @@ from django.urls import reverse_lazy
 from proprietor.building.models import Apartment, Building
 
 
-class UtilityExpenseDispatchMixin:
+class ApartmentDispatchMixin:
     def dispatch(self, request, *args, **kwargs):
+        if not Apartment.objects.filter(pk=self.kwargs['apt_pk']):
+            raise Http404
         apartment_owners = Apartment.objects.values_list('owner').get(pk=self.kwargs['apt_pk'])
         if self.request.user.pk not in apartment_owners:
             raise exceptions.PermissionDenied("You don't have permissions to do that")
@@ -66,41 +68,41 @@ class UtilityExpenseFormValidMixin:
         return super().form_valid(form)
 
 
-class UtilityExpenseListViewMixin(UtilityExpenseDispatchMixin,
+class UtilityExpenseListViewMixin(ApartmentDispatchMixin,
                                   UtilityExpenseGetQuerysetMixin,
                                   UtilityExpenseGetContextMixin):
     """
-    A combination class
+    A composit class
     """
 
 
-class UtilityExpenseCreateViewMixin(UtilityExpenseDispatchMixin,
+class UtilityExpenseCreateViewMixin(ApartmentDispatchMixin,
                                     UtilityExpenseGetKwargsFormMixin,
                                     UtilityExpenseGetSuccessUrlMixin,
                                     UtilityExpenseGetContextMixin,
                                     UtilityExpenseFormValidMixin):
     """
-    A combination class
+    A composit class
     """
 
 
-class UtilityExpenseEditViewMixin(UtilityExpenseDispatchMixin,
+class UtilityExpenseEditViewMixin(ApartmentDispatchMixin,
                                   UtilityExpenseGetQuerysetMixin,
                                   UtilityExpenseGetObjectMixin,
                                   UtilityExpenseGetSuccessUrlMixin,
                                   UtilityExpenseGetContextMixin,
                                   UtilityExpenseFormValidMixin):
     """
-    A combination class
+    A composit class
     """
 
 
-class UtilityExpenseDeleteViewMixin(UtilityExpenseDispatchMixin,
+class UtilityExpenseDeleteViewMixin(ApartmentDispatchMixin,
                                     UtilityExpenseGetQuerysetMixin,
                                     UtilityExpenseGetObjectMixin,
                                     UtilityExpenseGetSuccessUrlMixin):
     """
-    A combination class
+    A composit class
     """
 
 

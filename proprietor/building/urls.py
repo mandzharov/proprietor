@@ -13,7 +13,7 @@ urlpatterns = [
     path("<int:pk>/apartment/create/", views.AddApartmentView.as_view(), name="create apartment"),
     path("<int:pk>/apartment/<int:apt_pk>/edit/", views.EditApartmentView.as_view(), name="edit apartment"),
     path("<int:pk>/apartment/<int:apt_pk>/delete/", views.DeleteApartmentView.as_view(), name="delete apartment"),
-    path("<int:pk>/apartment/<int:apt_pk>/expense/report/", views.ReportView.as_view(),
+    path("apartment/<int:apt_pk>/expense/report/", views.ReportView.as_view(),
          name="report"),
 
     path("<int:pk>/apartment/<int:apt_pk>/expense/list/", views.ListUtilityExpensesView.as_view(),
