@@ -37,7 +37,6 @@ class ProfileDetailsViewTests(TestCase):
             'user': self.user_1
         }
         self.profile = Profile.objects.create(**self.PROFILE_DATA)
-        self.profile.save()
 
         self.user_2 = UserModel.objects.create_user(email=USER_2_DATA['email'])
         self.user_2.set_password(USER_2_DATA['password'])
@@ -71,7 +70,6 @@ class EditProfileViewTests(TestCase):
             'user': self.user_1
         }
         self.profile = Profile.objects.create(**self.PROFILE_DATA)
-        self.profile.save()
 
         self.user_2 = UserModel.objects.create_user(email=USER_2_DATA['email'])
         self.user_2.set_password(USER_2_DATA['password'])
